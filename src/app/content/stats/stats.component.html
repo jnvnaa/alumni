@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let alumni of alumniData">
+                <th scope="row">{{ alumni.id }}</th>
+                <td>{{alumni.name}}</td>
+                <td>{{alumni.batch}}</td>
+                <td>{{alumni.isVerified}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
