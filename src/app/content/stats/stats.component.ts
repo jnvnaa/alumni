@@ -3,6 +3,7 @@ import { AlumniService } from 'src/app/services/alumni.service';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-stats',
@@ -25,7 +26,8 @@ export class StatsComponent {
     this.isAdmin = auth.isAdmin();
 
     this.dtOptions = {
-      pagingType: "full_numbers"
+      pagingType: "full_numbers",
+      pageLength: 50
     }
 
     this.alumniService.getAllAlumni().subscribe((res:any) => {
@@ -35,5 +37,25 @@ export class StatsComponent {
       this.dtTrigger.next(null);
     });
   }
+
+
+  sendCred(alumni:any)
+  {
+    if(typeof alumni.phone!='undefined' && alumni.phone)
+    {
+
+        this.alumniService.sendCred(alumni.id).subscribe(res => {
+          Swal.fire(res.message);
+        },
+        error => {
+          Swal.fire(error.error.message);
+        })
+      }
+      else
+      {
+        Swal.fire("Phone number does not exists");
+      }
+
+   }
 
 }

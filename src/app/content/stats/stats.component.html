@@ -10,7 +10,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Batch</th>
                 <th *ngIf="isAdmin" scope="col">Phone</th>
-                <th scope="col">Verified</th>
+                <th *ngIf="isAdmin" scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -18,8 +18,8 @@
                 <th scope="row">{{ alumni.id }}</th>
                 <td><a routerLink="/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
                 <td>{{alumni.batch}}</td>
-                <td *ngIf="isAdmin">{{ alumniData.phone }}</td>
-                <td>{{alumni.isVerified}}</td>
+                <td *ngIf="isAdmin">{{ alumni.phone }}</td>
+                <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a></td>
               </tr>
             </tbody>
           </table>

@@ -3,6 +3,7 @@
 export interface AlumnusDto {
   batch?: null | string;
   id?: number;
-  isVerified?: boolean;
   name?: null | string;
+  phone?: null | string;
+  email?: null | string;
 }

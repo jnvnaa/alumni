@@ -85,4 +85,9 @@ export class AlumniService {
       return this._http.post(this.baseUrl + "api/auth/change-password",obj,this.httpOptions);
 
   }
+
+  sendCred(id:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/alumni/creds/" + id,null);
+  }
 }

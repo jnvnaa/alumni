@@ -5,6 +5,8 @@
           <a> <img src="{{ image }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
           <h3 class="media-heading">{{ alumni.name }} <small> Batch - {{ alumni.batch }}</small></h3>
 
+          <p><b>Phone:</b> {{ alumni.phone }}, <b>Email:</b> {{ alumni.email }}</p>
+
           <p><b>{{ professionalInfo.profession }}</b>, {{ professionalInfo.designation }} ({{professionalInfo.organization}})</p>
             <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
             <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>

@@ -20,15 +20,15 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav mu-menu navbar-right">
-                  <li routerLinkActive="active"><a href="https://jnvnaa.github.io">Home</a></li>
-                  <li routerLinkActive="active"><a href="" routerLink="sjc">Silver Jubilee</a></li>
+                  <li routerLinkActive="active"><a href="" routerLink="home">Home</a></li>
+                  <li routerLinkActive="active"><a href="https://jnvnaa.github.io">Silver Jubilee</a></li>
                   <li routerLinkActive="active"><a href="" routerLink="stories">Stories</a></li>
-                    <li routerLinkActive="active"><a href="" routerLink="discussions">Discussions</a></li>
-                    <li routerLinkActive="active"><a href="" routerLink="polls">Polls</a></li>
-                    <li  routerLinkActive="active"><a href="" routerLink="stats">Stats</a></li>
-                    <li *ngIf="isLoggedIn" routerLinkActive="active"><a href="" routerLink="profile">Profile</a></li>
-                    <li *ngIf="isNotLoggedIn" routerLinkActive="active"><a href="" routerLink="login">Login</a></li>
-                    <li *ngIf="isLoggedIn"><a href="" (click)="logout()">Logout</a></li>
+                  <li routerLinkActive="active"><a href="" routerLink="discussions">Discussions</a></li>
+                  <!-- <li routerLinkActive="active"><a href="" routerLink="polls">Polls</a></li> -->
+                  <li  routerLinkActive="active"><a href="" routerLink="stats">Members</a></li>
+                  <li *ngIf="isLoggedIn" routerLinkActive="active"><a href="" routerLink="profile">Profile</a></li>
+                  <li *ngIf="isNotLoggedIn" routerLinkActive="active"><a href="" routerLink="login">Login</a></li>
+                  <li *ngIf="isLoggedIn"><a href="" (click)="logout()">Logout</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

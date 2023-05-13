@@ -22,6 +22,7 @@ import { DataTablesModule } from "angular-datatables";
 import { UpdateprofileComponent } from './alumni/updateprofile/updateprofile.component';
 import { DisplayprofileComponent } from './alumni/displayprofile/displayprofile.component';
 import { ChangepasswordComponent } from './alumni/changepassword/changepassword.component';
+import { HomeComponent } from './content/home/home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ChangepasswordComponent } from './alumni/changepassword/changepassword.
     StatsComponent,
     ProfileComponent,
     UpdateprofileComponent,
-    DisplayprofileComponent
+    DisplayprofileComponent,
+    HomeComponent
 
   ],
   imports: [

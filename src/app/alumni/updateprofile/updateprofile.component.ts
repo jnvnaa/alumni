@@ -23,11 +23,12 @@ export class UpdateprofileComponent implements OnInit{
   image:any;
   imageToUpload:any;
 
-
   alumniInfoFG = new FormGroup({
     aboutMe: new FormControl(this.alumniInfo.aboutMe),
     houseInJNV: new FormControl(this.alumniInfo.houseInJNV),
     address: new FormControl(this.alumniInfo.address),
+    name: new FormControl(this.alumni.name),
+    email: new FormControl(this.alumni.email)
   })
 
   professionalInfoFG = new FormGroup({
@@ -66,7 +67,9 @@ export class UpdateprofileComponent implements OnInit{
 
     this.als.getAlumniById(this.alumniId).subscribe( res =>
       {
-        this.name = res.name;
+        this.alumni = res;
+        this.alumniInfoFG.controls["email"].setValue(this.alumni.email);
+        this.alumniInfoFG.controls["name"].setValue(this.alumni.name);
 
       })
 
@@ -107,15 +110,32 @@ export class UpdateprofileComponent implements OnInit{
 
   save()
   {
+        this.saveAlumni();
         this.saveAlumniInfo();
         this.saveProfessionalInfo();
         this.saveSocialInfo();
   }
 
+  saveAlumni()
+  {
+    debugger
+
+    this.alumni.email = this.alumniInfoFG.controls["email"].value;
+    this.alumni.name = this.alumniInfoFG.controls["name"].value;
+
+    this.als.updateAlumni(this.alumni).subscribe( res => {
+      console.log(res);
+
+    },
+    error => {
+      console.log(error);
+      Swal.fire(error.error.message);
+    });
+
+  }
+
   saveAlumniInfo()
   {
-
-    debugger
     this.alumniInfo.alumnusId = this.alumniId;
     this.alumniInfo.image = this.imageToUpload;
 
