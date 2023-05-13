@@ -57,7 +57,6 @@ export class ProfileComponent implements AfterViewInit {
   {
     this.isEdit = false;
     this.isNotEdit = true;
-    this.displayProfile.ngOnInit();
   }
 
   editPasswordCompleted()

@@ -23,6 +23,12 @@ export class UpdateprofileComponent implements OnInit{
   image:any;
   imageToUpload:any;
 
+  houses = ["Shankardev / Udaigiri (Yellow)",
+            "Netaji / Nilachal (Green)",
+            "Rajiv / Aravali (Blue)",
+            "Mother Teresa / Shivalik (Red)"
+            ]
+
   alumniInfoFG = new FormGroup({
     aboutMe: new FormControl(this.alumniInfo.aboutMe),
     houseInJNV: new FormControl(this.alumniInfo.houseInJNV),
@@ -180,7 +186,7 @@ export class UpdateprofileComponent implements OnInit{
     this.als.updateSocialInfo(this.socialInfo).subscribe( res => {
       console.log(res);
       Swal.fire("Successfully Saved")
-      this.search.emit();
+      this.router.navigate(["profile"]);
     },
     error => {
       console.log(error);

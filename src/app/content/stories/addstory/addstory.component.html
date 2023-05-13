@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+          <img src="https://cdn1.iconfinder.com/data/icons/softwaredemo/PNG/256x256/Pencil3.png" class="img-responsive center-block" alt="">
+      </div><!--.col -->
+      <div class="col-md-8">
+          <h3>
+              Add your story
+          </h3>
+
+        <!-- NOTE: TB3 form width default is 100%, so they expan to your <div> -->
+          <form name="frmComment" id="frmComment" [formGroup]="storyFG" (ngSubmit)="save()">
+              <label for="txtComment">Title:</label>
+              <input type="text" formControlName="title" class="form-control" placeholder="Title goes here">
+              <br>
+
+              <label for="txtComment">Story:</label>
+          <quill-editor [styles]="{height: '250px'}" formControlName="content" trackChanges="all" [modules]="modules"
+              (onEditorCreated)="addBindingCreated($event)">
+          </quill-editor>
+
+          <br>
+
+          <input type="submit" class="btn btn-primary" value="Save changes">&nbsp;&nbsp;<a (click)="back()" class="btn btn-warning">Back</a>
+
+        </form>
+      </div><!--.col -->
+  </div><!--./row -->
+  </div><!--./container -->

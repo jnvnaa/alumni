@@ -52,4 +52,9 @@ export class DisplayprofileComponent  implements OnInit{
 
       })
   }
+
+  reload()
+  {
+    this.ngOnInit()
+  }
 }

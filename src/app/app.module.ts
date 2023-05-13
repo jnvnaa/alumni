@@ -23,6 +23,13 @@ import { UpdateprofileComponent } from './alumni/updateprofile/updateprofile.com
 import { DisplayprofileComponent } from './alumni/displayprofile/displayprofile.component';
 import { ChangepasswordComponent } from './alumni/changepassword/changepassword.component';
 import { HomeComponent } from './content/home/home.component';
+import { AddstoryComponent } from './content/stories/addstory/addstory.component';
+
+import { FormsModule } from '@angular/forms';
+
+import { QuillModule } from 'ngx-quill';
+import { StoryexcerptComponent } from './content/stories/storyexcerpt/storyexcerpt.component';
+import { StoryComponent } from './content/stories/story/story.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +47,10 @@ import { HomeComponent } from './content/home/home.component';
     ProfileComponent,
     UpdateprofileComponent,
     DisplayprofileComponent,
-    HomeComponent
+    HomeComponent,
+    AddstoryComponent,
+    StoryexcerptComponent,
+    StoryComponent
 
   ],
   imports: [
@@ -49,6 +59,8 @@ import { HomeComponent } from './content/home/home.component';
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
+    QuillModule.forRoot(),
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,
