@@ -52,23 +52,6 @@ export class AddstoryComponent {
     }
   }
 
-  addBindingCreated(quill:any) {
-    quill.keyboard.addBinding({
-      key: 'b'
-    }, (range:any, context:any) => {
-      // tslint:disable-next-line:no-console
-      console.log('KEYBINDING B', range, context)
-    })
-
-    quill.keyboard.addBinding({
-      key: 'B',
-      shiftKey: true
-    }, (range:any, context:any) => {
-      // tslint:disable-next-line:no-console
-      console.log('KEYBINDING SHIFT + B', range, context)
-    })
-  }
-
   save()
   {
     debugger
@@ -78,9 +61,8 @@ export class AddstoryComponent {
     this.story.title = this.storyFG.controls["title"].value;
 
     this.ss.updateStory(this.story).subscribe( res => {
-      Swal.fire(res.message);
+      Swal.fire("Story added successfully")
       this.search.emit();
-
     }, error =>{
       Swal.fire(error.error.message);
     })
