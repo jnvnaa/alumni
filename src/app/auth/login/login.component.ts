@@ -38,7 +38,7 @@ export class LoginComponent {
       localStorage.setItem('token',res.token);
       localStorage.setItem('userid',res.userid);
       this.auth.emit(res.userid);
-      this.router.navigate(["sjc"]);
+      this.router.navigate(["home"]);
     },
     error => {
       console.log(error);
