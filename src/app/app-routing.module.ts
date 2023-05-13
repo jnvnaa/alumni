@@ -8,6 +8,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { StatsComponent } from './content/stats/stats.component';
 import { authGuard } from './services/auth.guard';
 import { ProfileComponent } from './alumni/profile/profile.component';
+import { UpdateprofileComponent } from './alumni/updateprofile/updateprofile.component';
 
 const routes: Routes = [
   {path: "sjc", component:EventComponent},
@@ -16,7 +17,9 @@ const routes: Routes = [
   {path: "polls", component:PollsComponent},
   {path: "login", component:LoginComponent},
   {path:"stats", component:StatsComponent, canActivate: [authGuard]},
-  {path:"profile", component:ProfileComponent, canActivate: [authGuard]}
+  {path:"profile/:id", component:ProfileComponent, canActivate: [authGuard]},
+  {path:"profile", component:ProfileComponent, canActivate: [authGuard]},
+  {path:"updateprofile",component:UpdateprofileComponent}
 ];
 
 @NgModule({

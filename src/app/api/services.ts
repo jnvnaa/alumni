@@ -1,0 +1,13 @@
+export { AlumniService } from './services/alumni.service';
+export { AlumnusInfoService } from './services/alumnus-info.service';
+export { AuthService } from './services/auth.service';
+export { CommentService } from './services/comment.service';
+export { EmotionService } from './services/emotion.service';
+export { PollService } from './services/poll.service';
+export { PollOptionsService } from './services/poll-options.service';
+export { PollVoteService } from './services/poll-vote.service';
+export { ProfessionalInfoService } from './services/professional-info.service';
+export { SocialInfoService } from './services/social-info.service';
+export { StoryService } from './services/story.service';
+export { TeacherService } from './services/teacher.service';
+export { UpcomingEventInfoService } from './services/upcoming-event-info.service';

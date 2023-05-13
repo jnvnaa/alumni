@@ -8,6 +8,8 @@ cp -R dist/alumni/ ../content
 
 cd ../content
 
+git checkout gh-pages
+
 git add .
 
 git commit -m "$message"

@@ -42,6 +42,9 @@ body {
 	letter-spacing: 0.5px;
 	line-height: 1.5;
 	color: #1c1b1b;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 ul {
@@ -294,42 +297,7 @@ button:focus {
 	line-height: 40px;
 }
 
-/*--------------------*/
-/* MENU */
-/*--------------------*/
 
-#mu-hero .navbar-default {
-	background-color: #fff;
-	border-color: #e7e7e7;
-	padding: 5px 0;
-}
-
-.mu-navbar {
-	transition: all 0.5s;
-}
-
-.mu-nav-show {
-	top: 0px;
-}
-
-#mu-hero .navbar-default .navbar-brand {
-	padding: 15px 15px;
-	font-size: 28px;
-	line-height: 20px;
-}
-
-.mu-navbar .mu-menu li a {
-	color: #333;
-	-webkit-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	transition: all 0.5s;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-	color: #fff;
-}
 
 
 
@@ -1230,6 +1198,7 @@ button:focus {
 	display: inline;
 	float: left;
 	width: 100%;
+  margin-top: auto;
 }
 
 .mu-footer-area{

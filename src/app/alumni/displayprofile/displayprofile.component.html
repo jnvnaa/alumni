@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="text-align: center; ">
+          <a> <img src="{{ image }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+          <h3 class="media-heading">{{ alumni.name }} <small> Batch - {{ alumni.batch }}</small></h3>
+
+          <p><b>{{ professionalInfo.profession }}</b>, {{ professionalInfo.designation }} ({{professionalInfo.organization}})</p>
+            <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
+            <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>
+            <a href="{{ socialInfo.linkedIn }}" target="_blank" class="label label-success"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+          <hr>
+          <div style="text-align: center; " class="text-center">
+          <p class="text-left"><strong>Bio: </strong><br>
+              {{ alumniInfo.aboutMe }}</p>
+          <br>
+
+
+          </div>
+    </div>
+  </div>
+</div>

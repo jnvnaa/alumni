@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { UrlService } from './url.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  //baseUrl = "http://localhost:5024/";
+
+  baseUrl = "";
+
   public getLoggedInName = new Subject<any>();
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:HttpClient, private urls:UrlService) {
+    this.baseUrl = urls.getBaseUrl();
+  }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
@@ -16,7 +24,7 @@ export class AuthService {
 
   onLogin(obj:any) : Observable<any>
   {
-      return this._http.post("https://jnvnaa-alumni-service.azurewebsites.net/api/auth",obj,this.httpOptions);
+      return this._http.post(this.baseUrl + "api/auth",obj,this.httpOptions);
   }
 
   emit(id:any)
@@ -27,5 +35,24 @@ export class AuthService {
   isLoggedIn()
   {
     return !!localStorage.getItem("token");
+  }
+
+  loggedInId()
+  {
+    return Number(localStorage.getItem("userid"));
+  }
+
+  isAdmin()
+  {
+    if(!!localStorage.getItem("token"))
+    {
+
+      let role = JSON.parse(window.atob(localStorage.getItem('token')!.split('.')[1]))["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+
+      console.log(role);
+      return 'admin' === role;
+    }
+
+    return false;
   }
 }

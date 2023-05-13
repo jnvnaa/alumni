@@ -9,14 +9,16 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Batch</th>
+                <th *ngIf="isAdmin" scope="col">Phone</th>
                 <th scope="col">Verified</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let alumni of alumniData">
                 <th scope="row">{{ alumni.id }}</th>
-                <td>{{alumni.name}}</td>
+                <td><a routerLink="/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
                 <td>{{alumni.batch}}</td>
+                <td *ngIf="isAdmin">{{ alumniData.phone }}</td>
                 <td>{{alumni.isVerified}}</td>
               </tr>
             </tbody>

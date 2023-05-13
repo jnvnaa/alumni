@@ -1,1 +1,22 @@
-<p>profile works!</p>
+
+
+<app-displayprofile [alumniId]="id" *ngIf="isNotEdit"></app-displayprofile>
+
+<app-updateprofile  *ngIf="isEdit" (search)="editCompleted()"></app-updateprofile>
+
+<app-changepassword  *ngIf="isPasswordEdit" (search)="editPasswordCompleted()"></app-changepassword>
+
+<div *ngIf="owner">
+  <div class="container"  *ngIf="isNotEdit">
+    <div class="row">
+      <div class="col-md-12">
+        <hr />
+
+        <button type="button" (click)="enableEdit()" class="btn btn-success pull-left"><i class="fa fa-edit"></i> Edit</button>
+        <button type="button" (click)="enablePasswordEdit()" class="btn btn-success pull-right"><i class="fa fa-edit"></i> Change Password</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br />

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ChangepasswordComponent } from './auth/changepassword/changepassword.component';
 import { PasswordresetComponent } from './auth/passwordreset/passwordreset.component';
 import { EventComponent } from './content/event/event.component';
 import { DiscussionsComponent } from './content/discussions/discussions.component';
@@ -19,7 +18,10 @@ import { ProfileComponent } from './alumni/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomInterceptor } from './services/custom.interceptor';
 
-import { DataTablesModule } from "angular-datatables"
+import { DataTablesModule } from "angular-datatables";
+import { UpdateprofileComponent } from './alumni/updateprofile/updateprofile.component';
+import { DisplayprofileComponent } from './alumni/displayprofile/displayprofile.component';
+import { ChangepasswordComponent } from './alumni/changepassword/changepassword.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +36,17 @@ import { DataTablesModule } from "angular-datatables"
     StoriesComponent,
     PollsComponent,
     StatsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateprofileComponent,
+    DisplayprofileComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,

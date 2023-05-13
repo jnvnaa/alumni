@@ -1,3 +1,36 @@
+.mu-hero-overlay,
+.mu-video-overlay {
+	background-color: #EE3268;/* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #64b3f4, #EE3268);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #64b3f4, #EE3268); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.mu-primary-btn:hover,
+.mu-primary-btn:focus,
+.mu-copy-right a:hover,
+.mu-copy-right a:focus,
+.mu-send-msg-btn:hover,
+.mu-send-msg-btn:focus,
+.mu-faq-content .panel-title a:hover,
+.mu-faq-content .panel-title a:focus,
+.mu-faq-content .panel-title a[aria-expanded="true"],
+.mu-faq-content .panel-title a>span,
+.mu-menu ul li a:hover,
+.mu-menu ul li a:focus,
+.mu-single-speakers-info p,
+.mu-single-speakers-social li a:hover,
+.mu-single-speakers-social li a:focus,
+.mu-logo,
+.mu-logo:hover,
+.mu-logo:focus,
+#mu-hero .navbar-default .navbar-brand,
+.mu-navbar .mu-menu li a:hover,
+.mu-navbar .mu-menu li a:focus,
+.mu-single-event .mu-event-time {
+	color: #EE3268;
+}
+
 /*--------------------*/
 /* HEADER */
 /*--------------------*/
@@ -56,3 +89,44 @@
 .mu-menu-btn:focus {
 	border: 2px solid #fff;
 }
+
+
+/*--------------------*/
+/* MENU */
+/*--------------------*/
+
+#mu-hero .navbar-default {
+	background-color: #fff;
+	border-color: #e7e7e7;
+	padding: 5px 0;
+}
+
+.mu-navbar {
+	transition: all 0.5s;
+}
+
+.mu-nav-show {
+	top: 0px;
+}
+
+#mu-hero .navbar-default .navbar-brand {
+	padding: 15px 15px;
+	font-size: 28px;
+	line-height: 20px;
+}
+
+.mu-navbar .mu-menu li a {
+	color: #333;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+	color: #fff;
+  background-color: #EE3268;
+}
+
+

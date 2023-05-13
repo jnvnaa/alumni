@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,17 @@ export class LoginComponent {
     Password : new FormControl(''),
   });
 
+  class = "form-control btn btn-login";
+  clicked = false;
+
+  classGet()
+  {
+    return this.class;
+  }
+
   onSubmit() {
+
+    this.clicked = true;
 
     this.auth.onLogin(this.loginForm.value).subscribe((res:any) => {
       console.log(res);
@@ -28,7 +39,15 @@ export class LoginComponent {
       localStorage.setItem('userid',res.userid);
       this.auth.emit(res.userid);
       this.router.navigate(["sjc"]);
+    },
+    error => {
+      console.log(error);
+      Swal.fire(error.error.message);
+      this.router.navigate(["login"]);
+
     });
+
+    this.clicked = false;
   }
 
 
