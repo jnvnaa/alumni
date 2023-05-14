@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p><b>Title: {{ notice.title }}</b></p>
+      <hr class="text-custom" />
+      <div [innerHTML]="notice.content"></div>
+      <hr class="text-custom" />
+      <p class="text-custom">Published on: {{ notice.publishedDate | date}} </p>
+    </div>
+  </div>
+</div>

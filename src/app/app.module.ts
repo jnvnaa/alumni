@@ -29,7 +29,16 @@ import { FormsModule } from '@angular/forms';
 
 import { QuillModule } from 'ngx-quill';
 import { StoryexcerptComponent } from './content/stories/storyexcerpt/storyexcerpt.component';
-import { StoryComponent } from './content/stories/story/story.component'
+import { StoryComponent } from './content/stories/story/story.component';
+import { AdddiscussionComponent } from './content/discussions/adddiscussion/adddiscussion.component';
+import { DiscussionexcerptComponent } from './content/discussions/discussionexcerpt/discussionexcerpt.component';
+import { DiscussionComponent } from './content/discussions/discussion/discussion.component';
+import { AddcommentComponent } from './content/discussions/addcomment/addcomment.component';
+import { CommentComponent } from './content/discussions/comment/comment.component';
+import { NoticeComponent } from './home/notice/notice.component';
+import { NoticesComponent } from './home/notices/notices.component';
+import { AddnoticeComponent } from './home/addnotice/addnotice.component';
+import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.component'
 
 @NgModule({
   declarations: [
@@ -50,7 +59,16 @@ import { StoryComponent } from './content/stories/story/story.component'
     HomeComponent,
     AddstoryComponent,
     StoryexcerptComponent,
-    StoryComponent
+    StoryComponent,
+    AdddiscussionComponent,
+    DiscussionexcerptComponent,
+    DiscussionComponent,
+    AddcommentComponent,
+    CommentComponent,
+    NoticeComponent,
+    NoticesComponent,
+    AddnoticeComponent,
+    NoticeexcerptComponent
 
   ],
   imports: [

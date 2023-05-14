@@ -1,0 +1,23 @@
+
+  <div class="row">
+      <div class="col-md-12">
+          <form name="frmComment" id="frmComment" [formGroup]="commentFG" (ngSubmit)="save()">
+
+          <label for="txtComment">Comment: </label>&nbsp;
+          <quill-editor [styles]="{height: '100px',width: '100vh'}" formControlName="content" trackChanges="all" [modules]="modules">
+          </quill-editor>
+
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <input type="submit" class="btn btn-primary" value="Add Comment">
+            </div>
+
+          </div>
+
+
+
+        </form>
+      </div><!--.col -->
+  </div><!--./row -->
+

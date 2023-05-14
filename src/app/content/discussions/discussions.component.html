@@ -1,14 +1,21 @@
 
-<div class="container">
+<div class="container"  *ngIf="isNotEdit && isLoggedIn">
   <div class="row">
     <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-12">
-          <p>Portal coming soon</p>
-        </div>
-      </div>
-
-
+      <button type="button" (click)="enableEdit()" class="btn btn-success pull-left"><i class="fa fa-plus"></i> Add a discussion point</button>
     </div>
+
   </div>
+  <hr class="text-custom" />
 </div>
+
+<div class="container"  *ngIf="isNotEdit">
+<div class="row">
+  <div class="col-md-12">
+
+    <app-discussionexcerpt *ngFor="let st of stories" [story]="st"></app-discussionexcerpt>
+</div>
+</div>
+</div>
+
+<app-adddiscussion *ngIf="isEdit" (search)="editCompleted()"></app-adddiscussion>

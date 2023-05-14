@@ -16,10 +16,15 @@ export class StoriesComponent implements OnInit{
   stories:Story[] = []
   isNotEdit:boolean = false;
   isEdit:boolean = false;
+
+  isLoggedIn:boolean = false;
+
   constructor(private ss:StoryService, private auth:AuthService, private router:Router, private as:AlumniService)
   {
     this.isEdit = false;
     this.isNotEdit = true;
+
+    this.isLoggedIn = auth.isLoggedIn();
   }
   ngOnInit(): void {
     this.ss.getStories("story").subscribe( res => {

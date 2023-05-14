@@ -1,0 +1,20 @@
+
+<div class="container"  *ngIf="isAdmin">
+  <div class="row">
+    <div class="col-md-12">
+      <button type="button" (click)="enableEdit()" class="btn btn-success pull-left"><i class="fa fa-plus"></i> Add Notice</button>
+    </div>
+  </div>
+</div>
+
+<div class="container"  *ngIf="isNotEdit">
+<div class="row">
+  <div class="col-md-12">
+    <hr class="text-custom" />
+
+    <app-noticeexcerpt *ngFor="let n of notices" [notice]="n"></app-noticeexcerpt>
+</div>
+</div>
+</div>
+
+<app-addnotice *ngIf="isEdit" (search)="editCompleted()"></app-addnotice>

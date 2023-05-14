@@ -1,1 +1,5 @@
 <div class="text-center">Welcome to JNV Nalbari Alumni Assoicaiton</div>
+
+<div class="text-center" *ngIf="!isLoggedIn">Please  <a href="" routerLink="/login"><span class="text-custom">login</span></a> to view notices</div>
+
+<app-notices *ngIf="isLoggedIn"></app-notices>

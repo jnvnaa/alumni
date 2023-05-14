@@ -34,9 +34,20 @@ export class StoryService {
 
   }
 
+  getAllCommentsByStory(id:any) : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/comment/story/" + id);
+
+  }
+
   updateStory(obj:any) : Observable<any>
   {
       return this._http.post(this.baseUrl + "api/story",obj,this.httpOptions);
+  }
+
+  addComment(obj:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/comment",obj,this.httpOptions);
   }
 
 }

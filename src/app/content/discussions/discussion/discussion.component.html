@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p><b>Title: {{ story.title }}</b></p>
+      <p>Created By: <a routerLink="/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
+      <hr class="text-custom" />
+      <div [innerHTML]="story.content"></div>
+      <hr class="text-custom" />
+      <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> </p>
+      <hr class="text-custom" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <label>Comment Section:</label>
+
+      <app-addcomment [story]="story" *ngIf="isLoggedIn"></app-addcomment>
+
+      <hr class="text-custom" />
+
+      <app-comment  *ngFor="let c of comments" [comment]="c"></app-comment>
+
+    </div>
+  </div>
+</div>

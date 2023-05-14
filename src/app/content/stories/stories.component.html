@@ -1,5 +1,5 @@
 
-  <div class="container"  *ngIf="isNotEdit">
+  <div class="container"  *ngIf="isNotEdit && isLoggedIn">
     <div class="row">
       <div class="col-md-12">
         <button type="button" (click)="enableEdit()" class="btn btn-success pull-left"><i class="fa fa-plus"></i> Add your story</button>
