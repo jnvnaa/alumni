@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -10,7 +10,8 @@ export class HeaderComponent {
 
   isNotLoggedIn = false
   isLoggedIn = false
-  constructor(private auth:AuthService){
+  isMobile:boolean = false
+  constructor(private auth:AuthService, private elementRef: ElementRef){
     auth.getLoggedInName.subscribe(name => this.changeName(name));
     this.isNotLoggedIn = !this.auth.isLoggedIn();
     this.isLoggedIn = this.auth.isLoggedIn();
@@ -27,6 +28,18 @@ export class HeaderComponent {
     localStorage.clear();
 
     this.isNotLoggedIn = true
+  }
+
+  @HostListener("window:resize", [])
+  private onResize() {
+    if(window.innerWidth < 780)
+    {
+      this.isMobile = true;
+    }
+    else
+    {
+      this.isMobile = false;
+    }
   }
 
 }
