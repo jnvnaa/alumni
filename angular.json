@@ -23,7 +23,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/web.config"
+              "src/404.html"
             ],
             "styles": [
               "src/assets/css/theme-color/default-theme.css",

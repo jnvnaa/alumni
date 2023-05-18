@@ -18,7 +18,6 @@ const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch:"full"},
   {path: "home", component:HomeComponent},
   {path: "notices/:id", component:NoticeComponent},
-  {path: "sjc", component:EventComponent, canActivate: [authGuard]},
   {path: "stories", component:StoriesComponent},
   {path: "stories/:id", component:StoryComponent},
   {path: "discussions", component:DiscussionsComponent},
