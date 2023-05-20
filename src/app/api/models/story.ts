@@ -4,6 +4,7 @@ export interface Story {
   active?: boolean;
   alumnusId?: number;
   commentIds?: null | string;
+  excerpts?: null | string;
   content?: null | string;
   emotionIds?: null | string;
   id?: number;

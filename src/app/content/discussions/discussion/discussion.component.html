@@ -16,7 +16,7 @@
 
       <label>Comment Section:</label>
 
-      <app-addcomment [story]="story" *ngIf="isLoggedIn"></app-addcomment>
+      <app-addcomment [story]="story" (search)="commentAdded()" *ngIf="isLoggedIn"></app-addcomment>
 
       <hr class="text-custom" />
 

@@ -43,6 +43,7 @@ export class DiscussionsComponent {
   {
     this.isEdit = false;
     this.isNotEdit = true;
+    this.ngOnInit();
   }
 
   getAuthor(id:any)

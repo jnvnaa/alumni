@@ -42,4 +42,9 @@ export class DiscussionComponent {
     })
 
   }
+
+  commentAdded()
+  {
+    this.ngOnInit();
+  }
 }

@@ -45,6 +45,8 @@ export class StoriesComponent implements OnInit{
   {
     this.isEdit = false;
     this.isNotEdit = true;
+
+    this.ngOnInit();
   }
 
   getAuthor(id:any)

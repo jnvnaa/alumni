@@ -60,7 +60,7 @@ export class AddnoticeComponent {
     this.story.title = this.storyFG.controls["title"].value;
 
     this.ss.updateStory(this.story).subscribe( res => {
-      Swal.fire("Discussion point added successfully")
+      Swal.fire("Notice added successfully")
       this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);

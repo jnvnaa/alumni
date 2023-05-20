@@ -1,11 +1,11 @@
 <div>
-  <hr class="text-custom" />
   <div class="row">
   <div class="col-md-12">
     <p><b>Title: <a routerLink="/stories/{{story.id}}">{{ story.title }}</a></b></p>
-    <p>{{storyExcerpt}}</p>
+    <p>{{story.excerpts}}</p>
     <p><a routerLink="/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
     <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> </p>
   </div>
 </div>
+<hr class="text-custom" />
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Story, Comment } from 'src/app/api/models';
 import { StoryService } from 'src/app/services/story.service';
@@ -42,10 +42,13 @@ export class AddcommentComponent {
 
     this.ss.addComment(this.comment).subscribe( res => {
       Swal.fire("Comment added successfully")
+      this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);
     })
 
   }
+
+  @Output() search = new EventEmitter<string>();
 
 }

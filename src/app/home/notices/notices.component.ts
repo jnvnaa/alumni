@@ -42,5 +42,7 @@ export class NoticesComponent {
   {
     this.isEdit = false;
     this.isNotEdit = true;
+
+    this.ngOnInit();
   }
 }

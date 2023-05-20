@@ -14,6 +14,7 @@ export class StoryComponent implements OnInit{
   story:Story = {};
   storyId:any;
   alumnus:AlumnusDto = {}
+  content:string = "";
 
   constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService)
   {
