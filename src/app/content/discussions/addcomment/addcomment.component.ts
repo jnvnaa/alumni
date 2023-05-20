@@ -42,6 +42,7 @@ export class AddcommentComponent {
 
     this.ss.addComment(this.comment).subscribe( res => {
       Swal.fire("Comment added successfully")
+      this.commentFG.controls["content"].setValue("")
       this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);

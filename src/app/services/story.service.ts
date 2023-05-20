@@ -45,6 +45,16 @@ export class StoryService {
       return this._http.post(this.baseUrl + "api/story",obj,this.httpOptions);
   }
 
+  disable(id:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/story/disable/" + id,null);
+  }
+
+  disableComment(id:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/comment/disable/" + id,null);
+  }
+
   addComment(obj:any) : Observable<any>
   {
       return this._http.post(this.baseUrl + "api/comment",obj,this.httpOptions);
