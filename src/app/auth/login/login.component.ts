@@ -42,12 +42,20 @@ export class LoginComponent {
     },
     error => {
       console.log(error);
-      Swal.fire(error.error.message);
+      Swal.fire(
+        'Login Failed',
+        error.error.message,
+          'error'
+        );
       this.router.navigate(["login"]);
+
+      this.clicked =false;
 
     });
 
-    this.clicked = false;
+    this.loginForm.get("Username")?.reset();
+    this.loginForm.get("Password")?.reset();
+
   }
 
 
