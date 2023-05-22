@@ -1,11 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <p><b>Title: {{ notice.title }}</b></p>
+
+
+      <!-- the actual blog post: title/author/date/content -->
+      <h3>{{ notice.title }}</h3>
+      <hr>
+      <p><i class="fa fa-calendar"></i> Posted on {{ notice.publishedDate | date}}</p>
       <hr class="text-custom" />
       <div [innerHTML]="notice.content"></div>
-      <hr class="text-custom" />
-      <p><b>Published on: </b><span class="text-custom">{{ notice.publishedDate | date}} </span> </p>
     </div>
   </div>
 </div>

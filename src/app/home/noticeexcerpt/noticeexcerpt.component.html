@@ -1,9 +1,12 @@
 <div>
   <div class="row">
   <div class="col-md-12">
-    <p><b><a routerLink="/notices/{{notice.id}}">{{ notice.title }}</a></b></p>
+
+    <h3><a routerLink="/notices/{{notice.id}}">{{ notice.title }}</a></h3>
     <p>{{ notice.excerpts }}</p>
-    <p><b>Published on: </b><span class="text-custom">{{ notice.publishedDate | date}} </span> </p>
+    <div>
+    <span class="badge">Posted on: {{ notice.publishedDate | date}} </span><div class="pull-right"><a class="btn btn-primary btn-sm" routerLink="/notices/{{notice.id}}">Read more</a></div>
+     </div>
   </div>
 </div>
 <hr class="text-custom" />
