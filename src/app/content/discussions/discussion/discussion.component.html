@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-12">
 
-      <label>Comment Section ({{ comments?.length }}):</label>
+      <label>Comment Section ({{ comments.length }}):</label>
 
       <app-comment  *ngFor="let c of comments" [comment]="c" (search)="commentAdded()"></app-comment>
 

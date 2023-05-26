@@ -17,7 +17,9 @@ export class StatsComponent {
 
   isAdmin:boolean = false;
 
-  dtOptions:DataTables.Settings = {}
+  dtOptions:DataTables.Settings = {
+
+  }
 
   dtTrigger:Subject<any> = new Subject<any>()
 

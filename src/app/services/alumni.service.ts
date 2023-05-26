@@ -90,4 +90,9 @@ export class AlumniService {
   {
       return this._http.post(this.baseUrl + "api/alumni/creds/" + id,null);
   }
+
+  registerPhone(obj:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/alumni/phone-registration",obj,this.httpOptions);
+  }
 }

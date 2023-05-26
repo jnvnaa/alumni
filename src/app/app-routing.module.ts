@@ -13,6 +13,7 @@ import { HomeComponent } from './content/home/home.component';
 import { StoryComponent } from './content/stories/story/story.component';
 import { DiscussionComponent } from './content/discussions/discussion/discussion.component';
 import { NoticeComponent } from './home/notice/notice.component';
+import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "home", pathMatch:"full"},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:"stats", component:StatsComponent},
   {path:"profile/:id", component:ProfileComponent},
   {path:"profile", component:ProfileComponent, canActivate: [authGuard]},
-  {path:"updateprofile",component:UpdateprofileComponent, canActivate: [authGuard]}
+  {path:"updateprofile",component:UpdateprofileComponent, canActivate: [authGuard]},
+  {path:"phoneregister",component:PhoneregisterComponent, canActivate: [authGuard]}
 ];
 
 @NgModule({

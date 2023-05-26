@@ -39,7 +39,8 @@ import { NoticeComponent } from './home/notice/notice.component';
 import { NoticesComponent } from './home/notices/notices.component';
 import { AddnoticeComponent } from './home/addnotice/addnotice.component';
 import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.component';
-import { OverlayspinnerComponent } from './overlayspinner/overlayspinner.component'
+import { OverlayspinnerComponent } from './overlayspinner/overlayspinner.component';
+import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component'
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { OverlayspinnerComponent } from './overlayspinner/overlayspinner.compone
     NoticesComponent,
     AddnoticeComponent,
     NoticeexcerptComponent,
-    OverlayspinnerComponent
+    OverlayspinnerComponent,
+    PhoneregisterComponent
 
   ],
   imports: [
