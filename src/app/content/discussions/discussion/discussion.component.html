@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+
+      <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
+
       <p><b>Title: {{ story.title }}</b></p>
       <p>Created By: <a routerLink="/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
       <hr class="text-custom" />
@@ -28,3 +31,4 @@
     </div>
   </div>
 </div>
+

@@ -17,6 +17,7 @@ export class AddnoticeComponent {
   content = ''
 
   story:Story = {}
+  saving:boolean = false;
 
   storyFG = new FormGroup({
     title: new FormControl(this.story.title),
@@ -53,7 +54,7 @@ export class AddnoticeComponent {
 
   save()
   {
-    debugger
+    this.saving =true;
     this.story.alumnusId = this.auth.loggedInId();
     this.story.type = "notice";
     this.story.content = this.storyFG.controls["content"].value;
@@ -61,9 +62,11 @@ export class AddnoticeComponent {
 
     this.ss.updateStory(this.story).subscribe( res => {
       Swal.fire("Notice added successfully")
+      this.saving = false;
       this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);
+      this.saving = false;
     })
 
   }

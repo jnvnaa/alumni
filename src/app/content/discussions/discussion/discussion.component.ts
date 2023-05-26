@@ -19,6 +19,7 @@ export class DiscussionComponent {
   isLoggedIn:boolean = false;
   isOwner:boolean = false;
   isAdmin:boolean = false;
+  fetching:boolean = true;
 
   constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService, private auth:AuthService, private router:Router)
   {
@@ -33,6 +34,7 @@ export class DiscussionComponent {
   }
   ngOnInit(): void {
 
+    this.fetching = true;
     this.ss.getStoryById(this.storyId).subscribe(res => {
       this.story = res;
 
@@ -45,6 +47,8 @@ export class DiscussionComponent {
       this.als.getAlumniById(this.story.alumnusId!).subscribe(res2 => {
         this.alumnus = res2
       })
+
+      this.fetching = false;
     })
 
   }

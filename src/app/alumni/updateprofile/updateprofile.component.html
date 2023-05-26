@@ -39,10 +39,21 @@
                       </div>
                     </div>
 
+                    <div class="form-group">
+                      <label class="col-lg-3 control-label">Batch/ Teacher:</label>
+                      <div class="col-lg-8">
+                        <select class="form-control" id="country" formControlName="batch" [(ngModel)]="alumni.batch">
+                          <option value="default">--Select Batch/ Teacher--</option>
+                          <option *ngFor="let c of batches" [ngValue]="c">{{c}}</option>
+                      </select>
+                      </div>
+                    </div>
+
                   <div class="form-group">
                     <label class="col-lg-3 control-label">About Me:</label>
                     <div class="col-lg-8">
-                      <textarea class="form-control" formControlName="aboutMe"></textarea>
+                      <quill-editor [styles]="{height: '100px',width: '100vh'}" formControlName="aboutMe" trackChanges="all" [modules]="modules">
+                      </quill-editor>
                     </div>
                   </div>
                   <div class="form-group">
@@ -78,7 +89,10 @@
               <div class="form-group">
                 <label class="col-lg-3 control-label">Profession:</label>
                 <div class="col-lg-8">
-                  <input class="form-control" type="text" formControlName="profession">
+                  <select class="form-control" id="country" formControlName="profession" [(ngModel)]="professionalInfo.profession">
+                    <option value="default">--Select Profession--</option>
+                    <option *ngFor="let c of professions" [ngValue]="c">{{c}}</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group">
@@ -141,3 +155,5 @@
 
     </form>
 </div>
+
+<app-overlayspinner *ngIf="saving"></app-overlayspinner>

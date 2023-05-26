@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-12">
 
+      <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
 
       <!-- the actual blog post: title/author/date/content -->
       <h3>{{ notice.title }}</h3>
@@ -12,3 +13,5 @@
     </div>
   </div>
 </div>
+
+

@@ -38,7 +38,8 @@ import { CommentComponent } from './content/discussions/comment/comment.componen
 import { NoticeComponent } from './home/notice/notice.component';
 import { NoticesComponent } from './home/notices/notices.component';
 import { AddnoticeComponent } from './home/addnotice/addnotice.component';
-import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.component'
+import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.component';
+import { OverlayspinnerComponent } from './overlayspinner/overlayspinner.component'
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.compo
     NoticeComponent,
     NoticesComponent,
     AddnoticeComponent,
-    NoticeexcerptComponent
+    NoticeexcerptComponent,
+    OverlayspinnerComponent
 
   ],
   imports: [

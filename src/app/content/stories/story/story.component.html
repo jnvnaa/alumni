@@ -2,6 +2,8 @@
   <div class="row">
     <div class="col-md-12">
 
+      <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
+
       <!-- the actual blog post: title/author/date/content -->
       <h3>{{ story.title }}</h3>
       <p class="lead"><i class="fa fa-user"></i> by <a routerLink="/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a>

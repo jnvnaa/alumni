@@ -18,6 +18,8 @@ export class AdddiscussionComponent {
 
   story:Story = {}
 
+  saving:boolean = false;
+
   storyFG = new FormGroup({
     title: new FormControl(this.story.title),
     content: new FormControl(this.content)
@@ -53,7 +55,7 @@ export class AdddiscussionComponent {
 
   save()
   {
-    debugger
+    this.saving = true;
     this.story.alumnusId = this.auth.loggedInId();
     this.story.type = "discussion";
     this.story.content = this.storyFG.controls["content"].value;
@@ -61,9 +63,11 @@ export class AdddiscussionComponent {
 
     this.ss.updateStory(this.story).subscribe( res => {
       Swal.fire("Discussion point added successfully")
+      this.saving = false;
       this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);
+      this.saving = false;
     })
 
   }

@@ -20,6 +20,8 @@ export class AddstoryComponent {
 
   story:Story = {}
 
+  saving:boolean = false;
+
   storyFG = new FormGroup({
     title: new FormControl(this.story.title),
     content: new FormControl(this.content)
@@ -55,7 +57,7 @@ export class AddstoryComponent {
 
   save()
   {
-    debugger
+    this.saving = true;
     this.story.alumnusId = this.auth.loggedInId();
     this.story.type = "story";
     this.story.content = this.storyFG.controls["content"].value;
@@ -63,9 +65,11 @@ export class AddstoryComponent {
 
     this.ss.updateStory(this.story).subscribe( res => {
       Swal.fire("Story added successfully")
+      this.saving = false;
       this.search.emit();
     }, error =>{
       Swal.fire(error.error.message);
+
     })
 
   }

@@ -11,6 +11,7 @@ import { StoryService } from 'src/app/services/story.service';
 export class NoticeComponent {
   notice:Story = {};
   noticeId:any;
+  fetching:boolean = true;
 
   constructor(private actRoute:ActivatedRoute, private ss:StoryService)
   {
@@ -22,8 +23,10 @@ export class NoticeComponent {
   }
   ngOnInit(): void {
 
+    this.fetching = true;
     this.ss.getStoryById(this.noticeId).subscribe(res => {
       this.notice = res;
+      this.fetching = false;
     })
 
   }

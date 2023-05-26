@@ -7,7 +7,7 @@
 
           <p><b>Phone:</b> {{ alumni.phone }}, <b>Email:</b> {{ alumni.email }}</p>
 
-          <p><b>{{ professionalInfo.profession }}</b>, {{ professionalInfo.designation }} ({{professionalInfo.organization}})</p>
+          <p><b>{{ professionalInfo.profession }}</b><span *ngIf="professionalInfo.designation" >, {{ professionalInfo.designation }} </span><span *ngIf="professionalInfo.organization" >({{professionalInfo.organization}})</span> </p>
             <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
             <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>
             <a href="{{ socialInfo.linkedIn }}" target="_blank" class="label label-success"><i class="fa fa-linkedin"></i></a>
@@ -15,12 +15,12 @@
 
           <hr class="text-custom" />
           <div style="text-align: center; " class="text-center">
-          <p class="text-left"><strong>Bio: </strong><br>
-              {{ alumniInfo.aboutMe }}</p>
+          <p class="text-left"><strong>Bio: </strong></p>
+            <div class="text-left" [innerHTML]="alumniInfo.aboutMe"></div>
           <br>
           <hr class="text-custom" />
-          <p class="pull-left"><b>Address: </b>{{ alumniInfo.address }}</p>
-          <p class="pull-right"><b>House: </b>{{ alumniInfo.houseInJNV }}</p>
+          <p *ngIf="alumniInfo.address" class="pull-left"><b>Address: </b>{{ alumniInfo.address }}</p>
+          <p *ngIf="alumniInfo.houseInJNV" class="pull-right"><b>House: </b>{{ alumniInfo.houseInJNV }}</p>
 
           </div>
     </div>

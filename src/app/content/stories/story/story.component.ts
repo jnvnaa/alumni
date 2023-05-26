@@ -19,6 +19,7 @@ export class StoryComponent implements OnInit{
   content:string = "";
   isOwner:boolean = false;
   isAdmin:boolean = false;
+  fetching:boolean = false;
 
   constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService, private auth:AuthService, private router:Router)
   {
@@ -32,6 +33,7 @@ export class StoryComponent implements OnInit{
   }
   ngOnInit(): void {
 
+    this.fetching = true;
     this.ss.getStoryById(this.storyId).subscribe(res => {
       this.story = res;
 
@@ -40,6 +42,8 @@ export class StoryComponent implements OnInit{
       this.als.getAlumniById(this.story.alumnusId!).subscribe(res2 => {
         this.alumnus = res2
       })
+
+      this.fetching = false;
     })
 
   }
