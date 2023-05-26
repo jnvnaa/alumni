@@ -13,6 +13,14 @@
 <div class="row">
   <div class="col-md-12">
 
+    <div *ngIf="searching" >
+      <img src="https://jnvnaastorage.blob.core.windows.net/images/spinner.gif" height="30px" /> &nbsp;
+
+      Looking for content
+    </div>
+
+    <span *ngIf="!searching && !stories?.length">No Content Available</span>
+
     <app-discussionexcerpt *ngFor="let st of stories" [story]="st"></app-discussionexcerpt>
 </div>
 </div>

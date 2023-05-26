@@ -16,6 +16,7 @@ export class NoticesComponent {
   isEdit:boolean = false;
 
   isAdmin:boolean = false;
+  searching:boolean = true;
 
   constructor(private ss:StoryService, private auth:AuthService, private router:Router)
   {
@@ -25,9 +26,11 @@ export class NoticesComponent {
     this.isAdmin = auth.isAdmin();
   }
   ngOnInit(): void {
+
+    this.searching = true;
     this.ss.getStories("notice").subscribe( res => {
       this.notices = res
-
+      this.searching = false;
       console.log(res)
     })
   }

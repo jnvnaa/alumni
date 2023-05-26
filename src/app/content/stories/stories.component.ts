@@ -19,6 +19,8 @@ export class StoriesComponent implements OnInit{
 
   isLoggedIn:boolean = false;
 
+  searching:boolean = true;
+
   constructor(private ss:StoryService, private auth:AuthService, private router:Router, private as:AlumniService)
   {
     this.isEdit = false;
@@ -27,8 +29,12 @@ export class StoriesComponent implements OnInit{
     this.isLoggedIn = auth.isLoggedIn();
   }
   ngOnInit(): void {
+
+    this.searching = true;
     this.ss.getStories("story").subscribe( res => {
       this.stories = res
+
+      this.searching = false;
 
       console.log(res)
     })

@@ -19,6 +19,8 @@ export class DiscussionsComponent {
 
   isLoggedIn:boolean = false;
 
+  searching:boolean = true;
+
   constructor(private ss:StoryService, private auth:AuthService, private router:Router, private as:AlumniService)
   {
     this.isEdit = false;
@@ -26,9 +28,11 @@ export class DiscussionsComponent {
     this.isLoggedIn = auth.isLoggedIn();
   }
   ngOnInit(): void {
+
+    this.searching = true;
     this.ss.getStories("discussion").subscribe( res => {
       this.stories = res
-
+      this.searching = false
       console.log(res)
     })
   }
