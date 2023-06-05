@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlumniService } from 'src/app/services/alumni.service';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css']
 })
-export class StatsComponent {
+export class StatsComponent implements OnInit  {
 
   alumni = new FormControl('');
   alumniData:any = [];
@@ -27,6 +27,12 @@ export class StatsComponent {
 
     this.isAdmin = auth.isAdmin();
 
+
+
+
+  }
+  ngOnInit(): void {
+
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 50
@@ -39,6 +45,7 @@ export class StatsComponent {
       this.dtTrigger.next(null);
     });
   }
+
 
 
   sendCred(alumni:any)
@@ -60,4 +67,34 @@ export class StatsComponent {
 
    }
 
+
+   disable(alumni:any)
+   {
+
+    Swal.fire({
+      title: 'Are you sure want to delete?',
+      text: 'You will not be able to recover the user!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+
+        this.alumniService.disable(alumni.id).subscribe(res => {
+          Swal.fire("User deleted successfully");
+          this.ngOnInit();
+        },
+        error => {
+          Swal.fire(error.error.message);
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'User not deleted :)',
+          'error'
+        )
+      }
+    })
+  }
 }

@@ -11,26 +11,26 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-12">
-          <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+          <div class="table-responsive">
+          <table class="table re" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
                 <th scope="col">Batch</th>
-                <th *ngIf="isAdmin" scope="col">Phone</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
                 <th *ngIf="isAdmin" scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let alumni of alumniData">
-                <th scope="row">{{ alumni.id }}</th>
+                <td><b>{{alumni.batch}}</b></td>
                 <td><a routerLink="/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
-                <td>{{alumni.batch}}</td>
-                <td *ngIf="isAdmin">{{ alumni.phone }}</td>
-                <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a></td>
+                <td >{{ alumni.phone }}</td>
+                <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a>&nbsp;<a class="label label-danger" (click)="disable(alumni)"><span class="fa fa-trash"></span></a></td>
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
       </div>
 

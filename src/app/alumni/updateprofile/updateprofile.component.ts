@@ -32,7 +32,33 @@ export class UpdateprofileComponent implements OnInit{
             "Mother Teresa / Shivalik (Red)"
             ]
 
-  professions = ["Teacher","Professor","Social Worker","Doctor", "Lawyer", "Engineer"]
+  professions = ["Business",
+  "Banking /Finance",
+  "Computers & Information Technology",
+  "Real Estate/Contruction",
+  "Trades",
+  "Education, Teaching & Training",
+  "Engineering & Engineering Technology",
+  "Technicians",
+  "Fishing, and Animal Husbandry",
+  "Farming & Forestry",
+  "Health & Medical",
+  "Hospitality, Travel & Tourism",
+  "Legal, Criminal Justice & Law Enforcement",
+  "Management",
+  "Media Communications & Broadcasting",
+  "Defence, Military & Armed Forces",
+  "Public Service / Administration",
+  "Office Administration & Management",
+  "Production & Manufacturing",
+  "Psychology & Counseling",
+  "Installation, Repair & Maintenance",
+  "Sales & Marketing",
+  "Transportation Services",
+  "Social & Life Sciences",
+  "Politician",
+  "Social Worker",
+  "Others Professional & Services"]
 
   batches = ["Teacher","1994-1995","1995-1996","1996-1997","1997-1998","1998-1999","1999-2000","2000-2001","2001-2002","2002-2003",
               "2003-2004","2004-2005","2005-2006","2006-2007","2007-2008","2008-2009","2009-2010","2010-2011",
@@ -95,8 +121,20 @@ export class UpdateprofileComponent implements OnInit{
         this.alumni = res;
         this.alumniInfoFG.controls["email"].setValue(this.alumni.email);
         this.alumniInfoFG.controls["name"].setValue(this.alumni.name);
-        this.alumniInfoFG.controls["batch"].setValue(this.alumni.batch);
 
+        if(this.alumni.batch)
+        {
+          this.alumniInfoFG.controls["batch"].setValue(this.alumni.batch);
+        }
+        else
+        {
+        this.alumniInfoFG.controls["batch"].setValue("");
+
+        }
+
+      },
+      error => {
+        this.alumniInfoFG.controls["batch"].setValue("");
       })
 
     this.als.getAlumniInfo(this.auth.loggedInId()).subscribe(res =>
@@ -104,9 +142,22 @@ export class UpdateprofileComponent implements OnInit{
 
         this.alumniInfo = res;
         this.image = this.alumniInfo?.image;
-        this.alumniInfoFG.controls["houseInJNV"].setValue(this.alumniInfo.houseInJNV);
+
+        if(this.alumniInfo.houseInJNV)
+        {
+          this.alumniInfoFG.controls["houseInJNV"].setValue(this.alumniInfo.houseInJNV);
+        }
+        else
+        {
+          this.alumniInfoFG.controls["houseInJNV"].setValue("");
+        }
+
         this.alumniInfoFG.controls["address"].setValue(this.alumniInfo.address);
         this.alumniInfoFG.controls["aboutMe"].setValue(this.alumniInfo.aboutMe);
+
+      },
+      error => {
+        this.alumniInfoFG.controls["houseInJNV"].setValue("");
 
       })
 
@@ -114,10 +165,23 @@ export class UpdateprofileComponent implements OnInit{
         {
           this.professionalInfo = res;
 
-          this.professionalInfoFG.controls["profession"].setValue(this.professionalInfo.profession);
+          if(this.professionalInfo.profession)
+          {
+            this.professionalInfoFG.controls["profession"].setValue(this.professionalInfo.profession);
+
+          }
+          else
+          {
+          this.professionalInfoFG.controls["profession"].setValue("");
+
+          }
+
           this.professionalInfoFG.controls["designation"].setValue(this.professionalInfo.designation);
           this.professionalInfoFG.controls["organization"].setValue(this.professionalInfo.organization);
 
+        },
+        error => {
+          this.professionalInfoFG.controls["profession"].setValue("");
         })
 
         this.als.getSocialInfo(this.auth.loggedInId()).subscribe(res =>
@@ -149,7 +213,16 @@ export class UpdateprofileComponent implements OnInit{
 
     this.alumni.email = this.alumniInfoFG.controls["email"].value;
     this.alumni.name = this.alumniInfoFG.controls["name"].value;
-    this.alumni.batch = this.alumniInfoFG.controls["batch"].value;
+
+    if(this.alumniInfoFG.controls["batch"].value)
+    {
+      this.alumni.batch = this.alumniInfoFG.controls["batch"].value;
+    }
+    else
+    {
+      this.alumni.batch = "";
+    }
+
 
     this.als.updateAlumni(this.alumni).subscribe( res => {
       console.log(res);
@@ -167,9 +240,34 @@ export class UpdateprofileComponent implements OnInit{
     this.alumniInfo.alumnusId = this.alumniId;
     this.alumniInfo.image = this.imageToUpload;
 
-    this.alumniInfo.aboutMe = this.alumniInfoFG.controls["aboutMe"].value;
-    this.alumniInfo.houseInJNV = this.alumniInfoFG.controls["houseInJNV"].value;
-    this.alumniInfo.address = this.alumniInfoFG.controls["address"].value;
+    if(this.alumniInfoFG.controls["aboutMe"].value)
+    {
+      this.alumniInfo.aboutMe = this.alumniInfoFG.controls["aboutMe"].value;
+    }
+    else
+    {
+      this.alumniInfo.aboutMe = "";
+    }
+
+
+    if(this.alumniInfoFG.controls["houseInJNV"].value)
+    {
+      this.alumniInfo.houseInJNV = this.alumniInfoFG.controls["houseInJNV"].value;
+    }
+    else
+    {
+      this.alumniInfo.houseInJNV = "";
+    }
+
+    if(this.alumniInfoFG.controls["address"].value)
+    {
+      this.alumniInfo.address = this.alumniInfoFG.controls["address"].value;
+
+    }
+    else
+    {
+      this.alumniInfo.address = "";
+    }
 
     this.als.updateAlumniInfo(this.alumniInfo).subscribe( res => {
       console.log(res);
