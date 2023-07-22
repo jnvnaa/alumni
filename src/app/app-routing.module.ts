@@ -25,7 +25,7 @@ const routes: Routes = [
   {path: "discussions/:id", component:DiscussionComponent, canActivate: [authGuard]},
   {path: "polls", component:PollsComponent, canActivate: [authGuard]},
   {path: "login", component:LoginComponent},
-  {path:"stats", component:StatsComponent},
+  {path:"stats", component:StatsComponent, canActivate: [authGuard]},
   {path:"profile/:id", component:ProfileComponent},
   {path:"profile", component:ProfileComponent, canActivate: [authGuard]},
   {path:"updateprofile",component:UpdateprofileComponent, canActivate: [authGuard]},
