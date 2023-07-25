@@ -21,6 +21,7 @@
     "@schematics/angular": "^9.1.0",
     "@videogular/ngx-videogular": "^8.0.0",
     "angular-datatables": "^15.0.1",
+    "chart.js": "^4.3.1",
     "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.11.3",
     "jquery": "^3.6.0",
