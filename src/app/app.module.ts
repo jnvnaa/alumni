@@ -40,7 +40,16 @@ import { NoticesComponent } from './home/notices/notices.component';
 import { AddnoticeComponent } from './home/addnotice/addnotice.component';
 import { NoticeexcerptComponent } from './home/noticeexcerpt/noticeexcerpt.component';
 import { OverlayspinnerComponent } from './overlayspinner/overlayspinner.component';
-import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component'
+import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
+import { DashboardComponent } from './content/dashboard/dashboard.component';
+import { SjcComponent } from './content/sjc/sjc.component';
+import { VideoplayerComponent } from './content/videoplayer/videoplayer.component';
+import { CommonModule } from '@angular/common';
+import { VgCoreModule} from '@videogular/ngx-videogular/core';
+import {VgControlsModule} from '@videogular/ngx-videogular/controls';
+import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
+import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +81,10 @@ import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.com
     AddnoticeComponent,
     NoticeexcerptComponent,
     OverlayspinnerComponent,
-    PhoneregisterComponent
+    PhoneregisterComponent,
+    DashboardComponent,
+    SjcComponent,
+    VideoplayerComponent   
 
   ],
   imports: [
@@ -82,7 +94,12 @@ import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.com
     HttpClientModule,
     DataTablesModule,
     QuillModule.forRoot(),
-    FormsModule
+    FormsModule,
+    CommonModule, 
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,

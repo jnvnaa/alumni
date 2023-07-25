@@ -1,9 +1,9 @@
 <div>
   <div class="row">
   <div class="col-md-12">
-    <h3><a routerLink="/stories/{{story.id}}">{{ story.title }}</a></h3>
+    <h3><a routerLink="/alumni/stories/{{story.id}}">{{ story.title }}</a></h3>
     <p>{{story.excerpts}}</p>
-    <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b>By:</b> <a routerLink="/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
+    <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b>By:</b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
   </div>
 </div>
 <hr class="text-custom" />

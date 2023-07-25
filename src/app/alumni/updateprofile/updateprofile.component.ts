@@ -27,7 +27,7 @@ export class UpdateprofileComponent implements OnInit{
   modules = {}
 
   houses = ["Shankardev / Udaigiri (Yellow)",
-            "Netaji / Nilachal (Green)",
+            "Netaji / Nilgiri (Green)",
             "Rajiv / Aravali (Blue)",
             "Mother Teresa / Shivalik (Red)"
             ]

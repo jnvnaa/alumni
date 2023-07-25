@@ -2,10 +2,10 @@
   <div class="row">
   <div class="col-md-12">
 
-    <h3><a routerLink="/notices/{{notice.id}}">{{ notice.title }}</a></h3>
+    <h3><a routerLink="/alumni/notices/{{notice.id}}">{{ notice.title }}</a></h3>
     <p>{{ notice.excerpts }}</p>
     <div>
-    <span class="badge">Posted on: {{ notice.publishedDate | date}} </span><div class="pull-right"><a class="btn btn-primary btn-sm" routerLink="/notices/{{notice.id}}">Read more</a></div>
+    <span class="badge">Posted on: {{ notice.publishedDate | date}} </span><div class="pull-right"><a class="btn btn-primary btn-sm" routerLink="/alumni/notices/{{notice.id}}">Read more</a></div>
      </div>
   </div>
 </div>

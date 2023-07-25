@@ -71,7 +71,7 @@ export class DiscussionComponent {
       if (result.value) {
         this.ss.disable(this.story.id).subscribe( res => {
           Swal.fire("Content deleted successfully");
-          this.router.navigate(['/discussions']);
+          this.router.navigate(['/alumni/discussions']);
         })
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
