@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumnusDto, AlumnusInfo, ProfessionalInfo, SocialInfo } from 'src/app/api/models';
 import { AlumniService} from 'src/app/services/alumni.service';
@@ -68,9 +68,9 @@ export class UpdateprofileComponent implements OnInit{
     aboutMe: new FormControl(this.alumniInfo.aboutMe),
     houseInJNV: new FormControl(this.alumniInfo.houseInJNV),
     address: new FormControl(this.alumniInfo.address),
-    name: new FormControl(this.alumni.name),
+    name: new FormControl(this.alumni.name, Validators.required),
     email: new FormControl(this.alumni.email),
-    batch: new FormControl(this.alumni.batch)
+    batch: new FormControl(this.alumni.batch, Validators.required)
   })
 
   professionalInfoFG = new FormGroup({
@@ -110,6 +110,11 @@ export class UpdateprofileComponent implements OnInit{
         ['emoji']
       ]
     }
+  }
+
+  isNameNotSet()
+  {
+    return !this.auth.isNameSet();
   }
 
   ngOnInit(): void {
@@ -226,6 +231,7 @@ export class UpdateprofileComponent implements OnInit{
 
     this.als.updateAlumni(this.alumni).subscribe( res => {
       console.log(res);
+      localStorage.setItem('name',this.alumni.name!);
 
     },
     error => {

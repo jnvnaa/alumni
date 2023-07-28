@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DisplayprofileComponent } from '../displayprofile/displayprofile.component';
@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements AfterViewInit {
+export class ProfileComponent implements AfterViewInit, OnInit {
 
   @ViewChild(DisplayprofileComponent) displayProfile !: DisplayprofileComponent;
 
@@ -35,6 +35,12 @@ export class ProfileComponent implements AfterViewInit {
     {
       this.id = this.auth.loggedInId();
       this.owner = true;
+    }
+  }
+  ngOnInit(): void {
+    if(!this.auth.isNameSet())
+    {
+      this.enableEdit();
     }
   }
   ngAfterViewInit(): void {
