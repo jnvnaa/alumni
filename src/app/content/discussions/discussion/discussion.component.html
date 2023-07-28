@@ -7,7 +7,7 @@
       <p><b>Title: {{ story.title }}</b></p>
       <p>Created By: <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></p>
       <hr class="text-custom" />
-      <div [innerHTML]="story.content"></div>
+      <div [innerHTML]="content"></div>
       <hr class="text-custom" />
       <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span>&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button> </p>
       <hr class="text-custom" />

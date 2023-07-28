@@ -11,7 +11,7 @@
       <hr>
       <p><i class="fa fa-calendar"></i> Posted on {{ story.publishedDate | date}} &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button></p>
       <hr class="text-custom" />
-      <div [innerHTML]="story.content"></div>
+      <div [innerHTML]="content"></div>
     </div>
   </div>
     <hr class="text-custom" />
