@@ -37,6 +37,17 @@ export class AuthService {
     return !!localStorage.getItem("token");
   }
 
+  isNameSet()
+  {
+    var name = localStorage.getItem("name");
+    if(name && (typeof name === 'string' && name.trim().length > 0 && name != 'null'))
+    {
+      return true;
+    }
+
+    return false;
+  }
+
   loggedInId()
   {
     return Number(localStorage.getItem("userid"));
