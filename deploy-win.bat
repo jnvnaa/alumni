@@ -4,6 +4,8 @@ git add .
 
 git commit -m %arg1%
 
+git push
+
 ng build
 
 xcopy /S /I /E /Y .\dist\alumni\ ..\content2
