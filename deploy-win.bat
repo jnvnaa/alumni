@@ -1,16 +1,8 @@
 set arg1=%1
 
-git add .
+xcopy /S /I /E /Y .\dist\alumni\ ..\admin-jnvnaa
 
-git commit -m %arg1%
-
-git push
-
-ng build
-
-xcopy /S /I /E /Y .\dist\alumni\ ..\content2
-
-cd ../content2
+cd ../admin-jnvnaa
 
 git add .
 
