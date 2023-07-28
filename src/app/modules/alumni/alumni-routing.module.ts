@@ -14,6 +14,7 @@ import { StoriesComponent } from 'src/app/content/stories/stories.component';
 import { StoryComponent } from 'src/app/content/stories/story/story.component';
 import { NoticeComponent } from 'src/app/home/notice/notice.component';
 import { authGuard } from 'src/app/services/auth.guard';
+import { nonameGuard } from './guard/noname.guard';
 
 const routes: Routes = [
   {
@@ -21,19 +22,19 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {path: "", redirectTo: "home", pathMatch:"full"},
-      {path: "home", component:HomeComponent},
-      {path: "notices/:id", component:NoticeComponent},
-      {path: "stories", component:StoriesComponent},
-      {path: "stories/:id", component:StoryComponent},
-      {path: "discussions", component:DiscussionsComponent},
-      {path: "discussions/:id", component:DiscussionComponent},
-      {path: "polls", component:PollsComponent},
-      {path:"stats", component:StatsComponent},
-      {path:"profile/:id", component:ProfileComponent},
+      {path: "home", component:HomeComponent, canActivate:[nonameGuard]},
+      {path: "notices/:id", component:NoticeComponent, canActivate:[nonameGuard]},
+      {path: "stories", component:StoriesComponent, canActivate:[nonameGuard]},
+      {path: "stories/:id", component:StoryComponent, canActivate:[nonameGuard]},
+      {path: "discussions", component:DiscussionsComponent, canActivate:[nonameGuard]},
+      {path: "discussions/:id", component:DiscussionComponent, canActivate:[nonameGuard]},
+      {path: "polls", component:PollsComponent, canActivate:[nonameGuard]},
+      {path:"stats", component:StatsComponent, canActivate:[nonameGuard]},
+      {path:"profile/:id", component:ProfileComponent, canActivate:[nonameGuard]},
       {path:"profile", component:ProfileComponent},
       {path:"updateprofile",component:UpdateprofileComponent},
-      {path:"phoneregister",component:PhoneregisterComponent},
-      {path:"sjc",component:SjcComponent}
+      {path:"phoneregister",component:PhoneregisterComponent, canActivate:[nonameGuard]},
+      {path:"sjc",component:SjcComponent, canActivate:[nonameGuard]}
     ],
   },
 ];
