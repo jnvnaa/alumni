@@ -25,7 +25,6 @@ const routes: Routes = [
       import('./modules/alumni/alumni.module').then((m) => m.AlumniModule),
   },  
   { path: '**', redirectTo: '/login',pathMatch: 'full' },
-  
 ];
 
 @NgModule({
