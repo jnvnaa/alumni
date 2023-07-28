@@ -1,10 +1,14 @@
 set arg1=%1
 
+git add .
+
+git commit -m %arg1%
+
 ng build
 
-xcopy /S /I /E .\dist\alumni\ ..\admin-jnvnaa
+xcopy /S /I /E /Y .\dist\alumni\ ..\content2
 
-cd ../admin-jnvnaa
+cd ../content2
 
 git add .
 
