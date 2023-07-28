@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Story, Comment } from 'src/app/api/models';
+import { AuthService } from 'src/app/services/auth.service';
 import { StoryService } from 'src/app/services/story.service';
 import Swal from 'sweetalert2';
 
@@ -20,7 +21,7 @@ export class AddcommentComponent {
   })
 
 
-  constructor(private ss:StoryService) {
+  constructor(private ss:StoryService, private auth:AuthService) {
     this.modules = {
       'emoji-shortname': true,
       'emoji-textarea': true,
@@ -35,7 +36,7 @@ export class AddcommentComponent {
 
   save()
   {
-    this.comment.alumnusId = this.story.alumnusId;
+    this.comment.alumnusId = this.auth.loggedInId();
     this.comment.storyId = this.story.id;
     this.comment.content = this.commentFG.controls["content"].value;
     this.comment.active = true;

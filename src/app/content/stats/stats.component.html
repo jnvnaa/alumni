@@ -1,7 +1,23 @@
 <div class="container"  *ngIf="isAdmin">
-  <div class="row">
+  <div class="row register-phone">
     <div class="col-md-12">
-      <a href="" routerLink="/phoneregister" class="btn btn-success pull-left"><i class="fa fa-user"></i>Register Phone Number</a>
+      <a href="" routerLink="/alumni/phoneregister" class="btn btn-success pull-left"><i class="fa fa-user"></i>Register Phone Number</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row register-phone">
+    <div class="col-md-12">
+      <span class="badge badge-secondary"><b>Total Registered:</b> {{ reg }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row register-phone">
+    <div class="col-md-12">
+      <app-chart></app-chart>
     </div>
   </div>
 </div>
@@ -24,7 +40,7 @@
             <tbody>
               <tr *ngFor="let alumni of alumniData">
                 <td><b>{{alumni.batch}}</b></td>
-                <td><a routerLink="/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
+                <td><a routerLink="/alumni/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
                 <td >{{ alumni.phone }}</td>
                 <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a>&nbsp;<a class="label label-danger" (click)="disable(alumni)"><span class="fa fa-trash"></span></a></td>
               </tr>

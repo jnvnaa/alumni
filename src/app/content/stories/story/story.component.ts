@@ -61,7 +61,7 @@ export class StoryComponent implements OnInit{
       if (result.value) {
         this.ss.disable(this.story.id).subscribe( res => {
           Swal.fire("Content deleted successfully");
-          this.router.navigate(['/stories']);
+          this.router.navigate(['/alumni/stories']);
         })
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(

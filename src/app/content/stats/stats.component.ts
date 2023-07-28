@@ -15,6 +15,8 @@ export class StatsComponent implements OnInit  {
   alumni = new FormControl('');
   alumniData:any = [];
 
+  reg:number = 0;
+
   isAdmin:boolean = false;
 
   dtOptions:DataTables.Settings = {
@@ -27,21 +29,22 @@ export class StatsComponent implements OnInit  {
 
     this.isAdmin = auth.isAdmin();
 
-
-
-
   }
   ngOnInit(): void {
 
     this.dtOptions = {
       pagingType: "full_numbers",
-      pageLength: 50
+      pageLength: 50,
+      order: [[0, 'desc']]
     }
 
-    this.alumniService.getAllAlumni().subscribe((res:any) => {
+    this.alumniService.getAllAlumniExtra().subscribe((res:any) => {
       console.log(res);
 
-      this.alumniData = res;
+      
+
+      this.alumniData = res.alumni;
+      this.reg = res.reg;
       this.dtTrigger.next(null);
     });
   }

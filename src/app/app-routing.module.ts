@@ -16,20 +16,15 @@ import { NoticeComponent } from './home/notice/notice.component';
 import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "home", pathMatch:"full"},
-  {path: "home", component:HomeComponent},
-  {path: "notices/:id", component:NoticeComponent},
-  {path: "stories", component:StoriesComponent, canActivate: [authGuard]},
-  {path: "stories/:id", component:StoryComponent, canActivate: [authGuard]},
-  {path: "discussions", component:DiscussionsComponent, canActivate: [authGuard]},
-  {path: "discussions/:id", component:DiscussionComponent, canActivate: [authGuard]},
-  {path: "polls", component:PollsComponent, canActivate: [authGuard]},
-  {path: "login", component:LoginComponent},
-  {path:"stats", component:StatsComponent, canActivate: [authGuard]},
-  {path:"profile/:id", component:ProfileComponent},
-  {path:"profile", component:ProfileComponent, canActivate: [authGuard]},
-  {path:"updateprofile",component:UpdateprofileComponent, canActivate: [authGuard]},
-  {path:"phoneregister",component:PhoneregisterComponent, canActivate: [authGuard]}
+  {path: 'login', component:LoginComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {
+    path: 'alumni',
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./modules/alumni/alumni.module').then((m) => m.AlumniModule),
+  },  
+  { path: '**', redirectTo: '/login',pathMatch: 'full' },
 ];
 
 @NgModule({

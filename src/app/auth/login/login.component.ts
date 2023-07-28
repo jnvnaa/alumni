@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,11 +9,17 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(private auth:AuthService, private router:Router)
   {
 
+  }
+  ngOnInit(): void {
+    if(this.auth.isLoggedIn())
+    {
+      this.router.navigate(["alumni"]);
+    }
   }
 
   loginForm = new FormGroup({
@@ -38,7 +44,7 @@ export class LoginComponent {
       localStorage.setItem('token',res.token);
       localStorage.setItem('userid',res.userid);
       this.auth.emit(res.userid);
-      this.router.navigate(["home"]);
+      this.router.navigate(["alumni"]);
     },
     error => {
       console.log(error);
