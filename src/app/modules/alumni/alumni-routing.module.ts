@@ -13,8 +13,8 @@ import { StatsComponent } from 'src/app/content/stats/stats.component';
 import { StoriesComponent } from 'src/app/content/stories/stories.component';
 import { StoryComponent } from 'src/app/content/stories/story/story.component';
 import { NoticeComponent } from 'src/app/home/notice/notice.component';
-import { authGuard } from 'src/app/services/auth.guard';
 import { nonameGuard } from './guard/noname.guard';
+import { GalleryComponent } from 'src/app/content/gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -34,7 +34,8 @@ const routes: Routes = [
       {path:"profile", component:ProfileComponent},
       {path:"updateprofile",component:UpdateprofileComponent},
       {path:"phoneregister",component:PhoneregisterComponent, canActivate:[nonameGuard]},
-      {path:"sjc",component:SjcComponent, canActivate:[nonameGuard]}
+      {path:"sjc",component:SjcComponent, canActivate:[nonameGuard]},
+      {path:"gallery",component:GalleryComponent, canActivate:[nonameGuard]}
     ],
   },
 ];

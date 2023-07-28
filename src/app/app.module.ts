@@ -50,6 +50,7 @@ import {VgControlsModule} from '@videogular/ngx-videogular/controls';
 import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { ChartComponent } from './content/stats/chart/chart.component';
+import { GalleryComponent } from './content/gallery/gallery.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { ChartComponent } from './content/stats/chart/chart.component';
     DashboardComponent,
     SjcComponent,
     VideoplayerComponent,
-    ChartComponent   
+    ChartComponent,
+    GalleryComponent   
 
   ],
   imports: [
