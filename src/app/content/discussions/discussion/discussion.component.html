@@ -11,7 +11,7 @@
       <hr class="text-custom" />
       <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span>&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button> 
         &nbsp;<a href=
-        "whatsapp://send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/discussions/{{storyId}}"
+        "https://api.whatsapp.com/send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/discussions/{{storyId}}"
                 data-action="share/whatsapp/share"
                 target="_blank" class="label label-success">
                 <i class="fa fa-whatsapp"></i>

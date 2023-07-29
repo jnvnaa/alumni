@@ -11,7 +11,7 @@
       <hr>
       <p><i class="fa fa-calendar"></i> Posted on {{ story.publishedDate | date}} &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button>
         &nbsp;<a href=
-        "whatsapp://send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/stories/{{storyId}}"
+        "https://api.whatsapp.com/send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/stories/{{storyId}}"
                 data-action="share/whatsapp/share"
                 target="_blank" class="label label-success">
                 <i class="fa fa-whatsapp"></i>
