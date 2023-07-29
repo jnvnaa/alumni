@@ -1,6 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +11,20 @@ export class HeaderComponent implements OnInit {
   isNotLoggedIn = false
   isLoggedIn = false
   isMobile:boolean = false
-  constructor(private auth:AuthService, private elementRef: ElementRef, public breakpointObserver: BreakpointObserver){
+  constructor(private auth:AuthService, private elementRef: ElementRef){
     auth.getLoggedInName.subscribe(name => this.changeName(name));
     this.isNotLoggedIn = !this.auth.isLoggedIn();
     this.isLoggedIn = this.auth.isLoggedIn();
   }
   ngOnInit(): void {
-  
+    if(window.innerWidth < 780)
+    {
+      this.isMobile = true;
+    }
+    else
+    {
+      this.isMobile = false;
+    }
   }
 
   private changeName(name: string): void {
@@ -34,6 +40,16 @@ export class HeaderComponent implements OnInit {
     this.isNotLoggedIn = true
   }
 
-
+  @HostListener("window:resize", [])
+  private onResize() {
+    if(window.innerWidth < 780)
+    {
+      this.isMobile = true;
+    }
+    else
+    {
+      this.isMobile = false;
+    }
+  }
 
 }
