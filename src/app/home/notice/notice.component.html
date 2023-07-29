@@ -7,7 +7,14 @@
       <!-- the actual blog post: title/author/date/content -->
       <h3>{{ notice.title }}</h3>
       <hr>
-      <p><i class="fa fa-calendar"></i> Posted on {{ notice.publishedDate | date}}</p>
+      <p><i class="fa fa-calendar"></i> Posted on {{ notice.publishedDate | date}} &nbsp;
+        <a href=
+        "https://api.whatsapp.com/send?text={{notice.title}}. https://alumni.jnvnaa.in/%23/alumni/notices/{{noticeId}}"
+                data-action="share/whatsapp/share"
+                target="_blank" class="label label-success">
+                <i class="fa fa-whatsapp"></i>
+            </a> 
+      </p>
       <hr class="text-custom" />
       <div [innerHTML]="notice.content"></div>
     </div>
