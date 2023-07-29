@@ -51,6 +51,7 @@ import {VgOverlayPlayModule} from '@videogular/ngx-videogular/overlay-play';
 import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { ChartComponent } from './content/stats/chart/chart.component';
 import { GalleryComponent } from './content/gallery/gallery.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 @NgModule({
@@ -103,7 +104,8 @@ import { GalleryComponent } from './content/gallery/gallery.component';
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    LightboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,

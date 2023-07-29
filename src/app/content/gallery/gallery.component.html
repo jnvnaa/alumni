@@ -1,1 +1,41 @@
-<p>gallery works!</p>
+<div class="container">
+    <div class="row" style="padding-bottom: 10px;">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Please Select:</label>
+                <div class="col-lg-6">
+                    <select class="form-control" [(ngModel)]="description" #mySelect (change)='onOptionsSelected(mySelect.value)'>
+                        <option Value="All">All</option>
+                        <option *ngFor="let c of descriptions" [ngValue]="c">{{c}}</option>
+                    </select>                   
+                </div>
+
+                <div class="col-lg-3" style="font-size: large;">
+                    <a href="https://api.whatsapp.com/send?text=Alumni Photo Gallery. https://alumni.jnvnaa.in/%23/alumni/gallery"
+                                    data-action="share/whatsapp/share"  target="_blank" class="label label-success"> <i class="fa fa-whatsapp"></i> </a>  
+
+                    
+                </div>
+            </div>        
+        </div>
+        <div class="col-lig-6 pull-right">
+            <button type="button" class="btn btn-info" (click)="selectAll()">All</button>
+            <button type="button" class="btn btn-warning" (click)="selectOthers()">Others</button>
+        </div>
+    </div>
+</div>
+
+<div class="imgcontainer">
+    <div *ngIf="!isMobile" >
+        <div class="gallery" *ngFor="let image of activeImages; let i=index">
+        <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
+        </div>
+    </div>
+
+    <div *ngIf="isMobile" >
+        <div class="gallery2" *ngFor="let image of activeImages; let i=index">
+            <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}"/>
+        </div>
+    </div>
+</div>
+
