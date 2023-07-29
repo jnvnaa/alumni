@@ -78,4 +78,16 @@ export class StoryComponent implements OnInit{
 
   }
 
+  share() {
+  
+    // Opening URL
+    window.open(
+        "whatsapp://send?text=OK",
+
+        // This is what makes it 
+        // open in a new window.
+        '_blank' 
+    );
+}
+
 }
