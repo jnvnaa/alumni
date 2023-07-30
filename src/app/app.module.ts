@@ -52,6 +52,7 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';
 import { ChartComponent } from './content/stats/chart/chart.component';
 import { GalleryComponent } from './content/gallery/gallery.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { UrlloginComponent } from './auth/urllogin/urllogin.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { LightboxModule } from 'ngx-lightbox';
     SjcComponent,
     VideoplayerComponent,
     ChartComponent,
-    GalleryComponent   
+    GalleryComponent,
+    UrlloginComponent   
 
   ],
   imports: [

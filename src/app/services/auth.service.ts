@@ -27,6 +27,11 @@ export class AuthService {
       return this._http.post(this.baseUrl + "api/auth",obj,this.httpOptions);
   }
 
+  onUrlLogin(IdentifierKey:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/auth/" + IdentifierKey + "/login",this.httpOptions);
+  }
+
   emit(id:any)
   {
     this.getLoggedInName.next(id);
