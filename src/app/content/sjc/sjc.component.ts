@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SjcComponent {
 
+  firstThemeSongUrl = "https://jnvnaastorage.blob.core.windows.net/images/ThemeSong.mp4";
+
+  themeSongByTRUrl = "https://jnvnaastorage.blob.core.windows.net/images/SILVER JUBILEE THEME SONG-Ramchiary T.mp4";
+
 }

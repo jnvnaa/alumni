@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import {VgApiService} from '@videogular/ngx-videogular/core';
 import {VgStreamingModule } from '@videogular/ngx-videogular/streaming';
 
@@ -10,9 +10,12 @@ import {VgStreamingModule } from '@videogular/ngx-videogular/streaming';
 export class VideoplayerComponent {
   api: VgApiService = new VgApiService;
 
+  @Input() src:string = "";
+
+
   currentVideo: any = {
     name: 'Video one',
-    src: 'https://jnvnaastorage.blob.core.windows.net/images/ThemeSong.mp4',
+    src: this.src,
     type: 'video/mp4'
   }
 
