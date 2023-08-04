@@ -1,39 +1,58 @@
-.imgcontainer {
-  max-width: 1170px;
+.container2 {
+  width: 1200px;
+  margin: 20px auto;
+  columns: 3;
+  column-gap: 20px;
+  box-sizing: border-box;
+}
+
+.container2 .box
+{
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
 }
 
-.imgcontainer .gallery img {
-  float: left;
-  width: 33%;
-  height: auto;
-  border: 2px solid #fff;
-  -webkit-transition: -webkit-transform .15s ease;
-  -moz-transition: -moz-transform .15s ease;
-  -o-transition: -o-transform .15s ease;
-  -ms-transition: -ms-transform .15s ease;
-  transition: transform .15s ease;
-  position: relative;
+.container2 .box img
+{
+  max-width: 100%;
+  border-radius: 15px;
 }
 
-.imgcontainer .gallery2 img {
-  float: left;
+.container2 .box img:hover
+{
+
+    filter: brightness(150%);
+}
+
+.container3 {
+  width: 1200px;
+  margin: 20px auto;
+  columns: 1;
+  column-gap: 20px;
+  box-sizing: border-box;
+}
+
+.container3 .box
+{
   width: 100%;
-  height: auto;
-  border: 2px solid #fff;
-  -webkit-transition: -webkit-transform .15s ease;
-  -moz-transition: -moz-transform .15s ease;
-  -o-transition: -o-transform .15s ease;
-  -ms-transition: -ms-transform .15s ease;
-  transition: transform .15s ease;
-  position: relative;
+  margin-bottom: 10px;
+  break-inside: avoid;
 }
 
-button {
-  margin: 0 10px 10px 10px;
+.container3 .box img
+{
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.container3 .box img:hover
+{
+  filter: brightness(120%);
+}
+
+button
+{
   width: 100px;
+  margin-left: 20px;
 }

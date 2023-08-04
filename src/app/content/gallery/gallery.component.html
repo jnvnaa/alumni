@@ -25,17 +25,21 @@
     </div>
 </div>
 
-<div class="imgcontainer">
-    <div *ngIf="!isMobile" >
-        <div class="gallery" *ngFor="let image of activeImages; let i=index">
+<div class="container">
+    <div class="row" >
+    <div class="col-lg-12">
+    <div class="container2" *ngIf="!isMobile" >
+        <div class="box" *ngFor="let image of activeImages; let i=index">
         <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
         </div>
     </div>
 
-    <div *ngIf="isMobile" >
-        <div class="gallery2" *ngFor="let image of activeImages; let i=index">
-            <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}"/>
+    <div class="container3" *ngIf="isMobile" >
+        <div class="box" *ngFor="let image of activeImages; let i=index">
+        <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
         </div>
     </div>
+</div>
+</div>
 </div>
 
