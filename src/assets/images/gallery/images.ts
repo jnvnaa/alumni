@@ -84,4 +84,8 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":84, "desc":"Health Camp", "src": "1 (3).jpg", "caption": "Health Camp","thumb":""},
 {"id":85, "desc":"Plantation Drive", "src": "1 (1).jpg", "caption": "Plantation Drive","thumb":""},
 {"id":86, "desc":"Plantation Drive", "src": "1 (2).jpg", "caption": "Plantation Drive","thumb":""},
+{"id":87, "desc":"Jyotisman Award", "src": "1 (1).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
+{"id":88, "desc":"Jyotisman Award", "src": "1 (2).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
+{"id":89, "desc":"Jyotisman Award", "src": "1 (3).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
+{"id":90, "desc":"Jyotisman Award", "src": "1 (4).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
 ]
