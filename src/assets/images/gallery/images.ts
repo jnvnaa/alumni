@@ -96,6 +96,11 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":96, "desc":"Others", "src": "4 (3).jpeg", "caption": "Nilgiri girls hostel","thumb":""},
 {"id":97, "desc":"Others", "src": "4 (4).jpeg", "caption": "Others","thumb":""},
 {"id":98, "desc":"1996-1997", "src": "1.jpeg", "caption": "1996-1997","thumb":""},
-
-
+{"id":99, "desc":"Others", "src": "5 (1).jpeg", "caption": "Others","thumb":""},
+{"id":100, "desc":"Others", "src": "5 (2).jpeg", "caption": "Others","thumb":""},
+{"id":101, "desc":"Others", "src": "5 (3).jpeg", "caption": "Others","thumb":""},
+{"id":102, "desc":"Others", "src": "5 (4).jpeg", "caption": "Others","thumb":""},
+{"id":103, "desc":"Others", "src": "5 (5).jpeg", "caption": "Others","thumb":""},
+{"id":104, "desc":"Others", "src": "5 (6).jpeg", "caption": "Best cook","thumb":""},
+{"id":105, "desc":"Others", "src": "5 (7).jpeg", "caption": "Others","thumb":""},
 ]
