@@ -11,6 +11,12 @@ export const nonameGuard: CanActivateFn = (route, state) => {
   {
     return true;
   }
+  else if(!auth.isLoggedIn())
+  {
+    rt.navigate(["login"]);
+
+    return false;
+  }
   else
   {
     rt.navigate(["alumni/profile"]);

@@ -39,7 +39,24 @@ export class AuthService {
 
   isLoggedIn()
   {
-    return !!localStorage.getItem("token");
+    if(!!localStorage.getItem("token"))
+    {
+      if(this.tokenExpired(localStorage.getItem("token")!))
+      {
+        localStorage.clear();
+        return false;
+      }
+
+      return true;
+
+    }
+
+    return false;
+  }
+
+  private tokenExpired(token: string) {
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
   }
 
   isNameSet()
