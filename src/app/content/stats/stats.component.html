@@ -42,7 +42,7 @@
                 <td><b>{{alumni.batch}}</b></td>
                 <td><a routerLink="/alumni/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
                 <td >{{ alumni.phone }}</td>
-                <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a>&nbsp;<a class="label label-danger" (click)="disable(alumni)"><span class="fa fa-trash"></span></a></td>
+                <td *ngIf="isAdmin" ><a class="label label-success" (click)="sendCred(alumni)">Send Credential</a>&nbsp;<a class="label label-success" (click)="sendCredInWhatsApp(alumni)"><i class="fa fa-whatsapp"></i></a>&nbsp;<a class="label label-danger" (click)="disable(alumni)"><span class="fa fa-trash"></span></a></td>
               </tr>
             </tbody>
           </table>

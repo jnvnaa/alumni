@@ -53,6 +53,7 @@ import { ChartComponent } from './content/stats/chart/chart.component';
 import { GalleryComponent } from './content/gallery/gallery.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { UrlloginComponent } from './auth/urllogin/urllogin.component';
+import { CredmessageComponent } from './alumni/credmessage/credmessage.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { UrlloginComponent } from './auth/urllogin/urllogin.component';
     VideoplayerComponent,
     ChartComponent,
     GalleryComponent,
-    UrlloginComponent   
+    UrlloginComponent,
+    CredmessageComponent   
 
   ],
   imports: [

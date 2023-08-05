@@ -12,7 +12,6 @@ export class UrlloginComponent {
   constructor(private actRoute:ActivatedRoute, private router:Router, private auth:AuthService)
   {
 
-    debugger
     if(this.actRoute.snapshot.paramMap.get('id'))
     {
        var IdentifierKey = this.actRoute.snapshot.paramMap.get('id');

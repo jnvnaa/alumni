@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
 
   logout()
   {
-    debugger
+
     localStorage.clear();
 
     this.isNotLoggedIn = true

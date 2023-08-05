@@ -214,8 +214,6 @@ export class UpdateprofileComponent implements OnInit{
 
   saveAlumni()
   {
-    debugger
-
     this.alumni.email = this.alumniInfoFG.controls["email"].value;
     this.alumni.name = this.alumniInfoFG.controls["name"].value;
 
