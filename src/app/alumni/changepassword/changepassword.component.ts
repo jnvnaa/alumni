@@ -15,8 +15,7 @@ export class ChangepasswordComponent {
   password:ChangePasswordDto = {}
   alumniId = 0;
 
-  passwordFG = new FormGroup({
-    oldPassword: new FormControl(this.password.oldPassword),
+  passwordFG = new FormGroup({    
     newPassword: new FormControl(this.password.newPassword)
   })
 
@@ -34,7 +33,7 @@ export class ChangepasswordComponent {
   save()
   {
     this.password.id = this.alumniId;
-    this.password.oldPassword = this.passwordFG.controls["oldPassword"].value;
+    this.password.oldPassword = this.passwordFG.controls["newPassword"].value;
     this.password.newPassword = this.passwordFG.controls["newPassword"].value;
 
     this.als.updatePassword(this.password).subscribe( res => {

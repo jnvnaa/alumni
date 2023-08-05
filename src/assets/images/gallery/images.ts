@@ -88,4 +88,14 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":88, "desc":"Jyotisman Award", "src": "1 (2).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
 {"id":89, "desc":"Jyotisman Award", "src": "1 (3).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
 {"id":90, "desc":"Jyotisman Award", "src": "1 (4).jpeg", "caption": "A jyotisman award is being given to every class topper JNV Nalbari from class vi to xi in the name of late Arup kr.Baishya.It was started from 2022.","thumb":""},
+{"id":91, "desc":"2002-2003", "src": "1 (1).jpeg", "caption": "2002-2003","thumb":""},
+{"id":92, "desc":"2002-2003", "src": "1 (2).jpeg", "caption": "2002-2003","thumb":""},
+{"id":93, "desc":"2002-2003", "src": "1 (3).jpeg", "caption": "15 august 2003","thumb":""},
+{"id":94, "desc":"Others", "src": "4 (1).jpeg", "caption": "New year picnic day at banekuchi.. Teachers","thumb":""},
+{"id":95, "desc":"Others", "src": "4 (2).jpeg", "caption": "Manju Kumari Roy madam","thumb":""},
+{"id":96, "desc":"Others", "src": "4 (3).jpeg", "caption": "Nilgiri girls hostel","thumb":""},
+{"id":97, "desc":"Others", "src": "4 (4).jpeg", "caption": "Others","thumb":""},
+{"id":98, "desc":"1996-1997", "src": "1.jpeg", "caption": "1996-1997","thumb":""},
+
+
 ]
