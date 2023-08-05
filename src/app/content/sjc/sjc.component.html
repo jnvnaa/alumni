@@ -7,19 +7,15 @@
     </div>
     <hr class="text-custom" />
 
-    <div class="row">
-      <div class="col-md-12">
-        <app-videoplayer [src]="themeSongByTRUrl"></app-videoplayer>
-        <h3>Silver Jubilee Theme song submitted by Thulunga Ramchiary-batch 2005-2006</h3>
-      </div>
-    </div>
+    <a href="#themesong" class="btn btn-success" data-toggle="collapse">Presented Theme Songs</a>
+    <div id="themesong" class="collapse">
+      <app-themesong></app-themesong>
+    </div>    
 
-    <br />
+    <hr class="text-custom" />
 
-    <div class="row">
-      <div class="col-md-12">
-        <app-videoplayer [src]="firstThemeSongUrl"></app-videoplayer>
-        <h3>First Theme song - Cultural Committee</h3>
-      </div>
+    <a href="#committee" class="btn btn-success" data-toggle="collapse">JNV Nalbari Silver Jubilee Celebration Committee</a>
+    <div id="committee" class="collapse">
+      <app-committee></app-committee>
     </div>
   </div>

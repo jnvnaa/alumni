@@ -1,0 +1,23 @@
+
+<div class="committee">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Committee</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let com of committeeMembers">
+            <td>{{ com.Committee }}</td>
+            <td><a routerLink="/alumni/profile/{{com.Id}}">{{ com.Name }}</a></td>
+            <td>{{ com.Title }}</td>
+            <td><a routerLink="/alumni/profile/{{com.Id}}">{{ com.Phone }}</a></td>
+
+          </tr>
+        </tbody>
+      </table>
+
+</div>

@@ -54,6 +54,8 @@ import { GalleryComponent } from './content/gallery/gallery.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { UrlloginComponent } from './auth/urllogin/urllogin.component';
 import { CredmessageComponent } from './alumni/credmessage/credmessage.component';
+import { CommitteeComponent } from './content/sjc/committee/committee.component';
+import { ThemesongComponent } from './content/sjc/themesong/themesong.component';
 
 
 @NgModule({
@@ -93,7 +95,9 @@ import { CredmessageComponent } from './alumni/credmessage/credmessage.component
     ChartComponent,
     GalleryComponent,
     UrlloginComponent,
-    CredmessageComponent   
+    CredmessageComponent,
+    CommitteeComponent,
+    ThemesongComponent   
 
   ],
   imports: [
