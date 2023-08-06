@@ -81,8 +81,6 @@ export class StatsComponent implements OnInit  {
             phone = "91" + phone;
            }
 
-           debugger
-
            var message = res.message.replace("#","%23").replaceAll("\n","%0A");
 
            var url = "https://wa.me/"+phone+"/?text=" + res.message.replace("#","%23").replace("\n","%0A");

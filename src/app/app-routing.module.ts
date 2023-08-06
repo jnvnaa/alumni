@@ -15,6 +15,7 @@ import { DiscussionComponent } from './content/discussions/discussion/discussion
 import { NoticeComponent } from './home/notice/notice.component';
 import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
 import { UrlloginComponent } from './auth/urllogin/urllogin.component';
+import { IdentificationComponent } from './alumni/identification/identification.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},

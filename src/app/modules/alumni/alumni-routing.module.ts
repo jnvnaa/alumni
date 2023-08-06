@@ -15,6 +15,7 @@ import { StoryComponent } from 'src/app/content/stories/story/story.component';
 import { NoticeComponent } from 'src/app/home/notice/notice.component';
 import { nonameGuard } from './guard/noname.guard';
 import { GalleryComponent } from 'src/app/content/gallery/gallery.component';
+import { IdentificationComponent } from 'src/app/alumni/identification/identification.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
       {path:"updateprofile",component:UpdateprofileComponent},
       {path:"phoneregister",component:PhoneregisterComponent, canActivate:[nonameGuard]},
       {path:"sjc",component:SjcComponent, canActivate:[nonameGuard]},
-      {path:"gallery",component:GalleryComponent, canActivate:[nonameGuard]}
+      {path:"gallery",component:GalleryComponent, canActivate:[nonameGuard]},
+      {path: 'identification', component:IdentificationComponent},
     ],
   },
 ];

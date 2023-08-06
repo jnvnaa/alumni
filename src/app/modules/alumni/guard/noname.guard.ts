@@ -19,7 +19,7 @@ export const nonameGuard: CanActivateFn = (route, state) => {
   }
   else
   {
-    rt.navigate(["alumni/profile"]);
+    rt.navigate(["alumni/identification"]);
 
     return false;
   }

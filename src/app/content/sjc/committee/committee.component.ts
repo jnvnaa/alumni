@@ -22,8 +22,6 @@ export class CommitteeComponent {
 
       var dict:{[key: string]: any} = {};
       
-debugger
-
       for (var i = 0; i < this.alumni.length; i++) {
           var item = this.alumni[i];
 

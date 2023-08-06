@@ -56,6 +56,7 @@ import { UrlloginComponent } from './auth/urllogin/urllogin.component';
 import { CredmessageComponent } from './alumni/credmessage/credmessage.component';
 import { CommitteeComponent } from './content/sjc/committee/committee.component';
 import { ThemesongComponent } from './content/sjc/themesong/themesong.component';
+import { IdentificationComponent } from './alumni/identification/identification.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { ThemesongComponent } from './content/sjc/themesong/themesong.component'
     UrlloginComponent,
     CredmessageComponent,
     CommitteeComponent,
-    ThemesongComponent   
+    ThemesongComponent,
+    IdentificationComponent   
 
   ],
   imports: [
