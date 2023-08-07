@@ -103,4 +103,5 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":103, "desc":"Others", "src": "5 (5).jpeg", "caption": "Others","thumb":""},
 {"id":104, "desc":"Others", "src": "5 (6).jpeg", "caption": "Best cook","thumb":""},
 {"id":105, "desc":"Others", "src": "5 (7).jpeg", "caption": "Others","thumb":""},
+{"id":106, "desc":"1998-1999", "src": "plus2.jpeg", "caption": "Batch 1998-1999 - 12th Class","thumb":""},
 ]
