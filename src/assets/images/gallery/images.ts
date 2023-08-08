@@ -205,7 +205,5 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":205, "desc":"Batch 2010-2017", "src": "1 (74).jpg", "caption": "Batch 2010-2017","thumb":""},
 {"id":206, "desc":"Batch 2010-2017", "src": "1 (75).jpg", "caption": "Batch 2010-2017","thumb":""},
 {"id":207, "desc":"Batch 2010-2017", "src": "1 (76).jpg", "caption": "Batch 2010-2017","thumb":""},
-
-
-
+{"id":208, "desc":"1998-1999", "src": "plus2.jpeg", "caption": "Batch 1998-1999 - 12th Class","thumb":""},
 ]

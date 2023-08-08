@@ -2,13 +2,17 @@
 
 message=$1
 
-ng build --base-href /content/
+git add .
 
-cp -R dist/alumni/ ../content
+git commit -m "$message"
 
-cd ../content
+git push
 
-git checkout gh-pages
+ng build
+
+cp -R dist/alumni/ ../admin-jnvnaa
+
+cd ../admin-jnvnaa
 
 git add .
 
