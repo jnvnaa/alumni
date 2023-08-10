@@ -26,10 +26,10 @@
 </div>
 
 <div class="container">
-    <div class="row" >
+    <div class="row">
     <div class="col-lg-12">
     <div class="container2" *ngIf="!isMobile" >
-        <div class="box" *ngFor="let image of activeImages; let i=index">
+        <div class="box" *ngFor="let image of currentImages; let i=index">
         <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
         </div>
     </div>
@@ -39,6 +39,9 @@
         <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
         </div>
     </div>
+
+    <div class="pull-right loadMore">({{ currentImages.length }} of {{ activeImages.length }} images) <a *ngIf="activeImages.length != currentImages.length" class="btn btn-primary btn-sm" (click)="loadMore()">Load more</a></div>
+    
 </div>
 </div>
 </div>

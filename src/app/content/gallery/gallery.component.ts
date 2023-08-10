@@ -17,6 +17,9 @@ export class GalleryComponent implements OnInit {
 
   descriptions:string[] = [];
 
+  currentImages: {id: number, desc: string, src: string, caption: string, thumb: string}[] = [];
+
+  endIndex = 0;
 
   isMobile:boolean = false
 
@@ -105,6 +108,20 @@ export class GalleryComponent implements OnInit {
       });
 
     }
+
+    this.endIndex = 11; 
+
+    if(this.activeImages.length > this.endIndex)
+    {
+        this.currentImages = this.activeImages.slice(0,this.endIndex);
+
+        this.endIndex += 11;
+    }
+    else
+    {
+      this.currentImages = this.activeImages
+    }
+
   }
 
   shuffleArray(array: any) {
@@ -126,6 +143,20 @@ export class GalleryComponent implements OnInit {
     {
       this.isMobile = false;
     }
+  }
+
+  loadMore(): void {
+   
+      if(this.activeImages.length > this.endIndex)
+      {
+          this.currentImages = this.activeImages.slice(0,this.endIndex);
+
+          this.endIndex += 11;
+      }
+      else
+      {
+        this.currentImages = this.activeImages
+      }
   }
   
 }

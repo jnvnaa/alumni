@@ -129,7 +129,7 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":129, "desc":"Annual day 2010", "src": "1 (24).jpg", "caption": "Annual day 2010","thumb":""},
 {"id":130, "desc":"Annual day 2010", "src": "1 (25).jpg", "caption": "Annual day 2010","thumb":""},
 {"id":131, "desc":"Annual day 2010", "src": "1 (26).jpg", "caption": "Annual day 2010","thumb":""},
-{"id":132, "desc":"Batch 2010-2017", "src": "1 (1).jpg", "caption": "Batch 2010-2017","thumb":""},
+{"id":132, "desc":"Batch 2010-2017", "src": "1 (1).jpeg", "caption": "Batch 2010-2017","thumb":""},
 {"id":133, "desc":"Batch 2010-2017", "src": "1 (2).jpg", "caption": "Batch 2010-2017","thumb":""},
 {"id":134, "desc":"Batch 2010-2017", "src": "1 (3).jpg", "caption": "Batch 2010-2017","thumb":""},
 {"id":135, "desc":"Batch 2010-2017", "src": "1 (4).jpg", "caption": "Batch 2010-2017","thumb":""},
