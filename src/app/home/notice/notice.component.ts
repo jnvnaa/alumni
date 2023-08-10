@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Story } from 'src/app/api/models';
 import { StoryService } from 'src/app/services/story.service';
@@ -13,7 +14,9 @@ export class NoticeComponent {
   noticeId:any;
   fetching:boolean = true;
 
-  constructor(private actRoute:ActivatedRoute, private ss:StoryService)
+  content:any;
+
+  constructor(private actRoute:ActivatedRoute, private ss:StoryService, private domSanitizer:DomSanitizer)
   {
     if(this.actRoute.snapshot.paramMap.get('id'))
     {
@@ -26,7 +29,13 @@ export class NoticeComponent {
     this.fetching = true;
     this.ss.getStoryById(this.noticeId).subscribe(res => {
       this.notice = res;
-      this.fetching = false;
+
+      this.ss.getContentByFileName(this.notice.content!).subscribe(res2 => {
+        this.content = this.domSanitizer.bypassSecurityTrustHtml(res2.content);
+        this.fetching = false;
+        });
+
+
     })
 
   }

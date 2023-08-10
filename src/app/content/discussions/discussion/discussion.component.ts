@@ -41,9 +41,10 @@ export class DiscussionComponent {
     this.ss.getStoryById(this.storyId).subscribe(res => {
 
       this.story = res;
-
-      this.content = this.domSanitizer.bypassSecurityTrustHtml(this.story.content!);
-
+      this.ss.getContentByFileName(this.story.content!).subscribe(res2 => {
+        this.content = this.domSanitizer.bypassSecurityTrustHtml(res2.content);
+        });
+     
       this.isOwner = this.auth.loggedInId() == this.story.alumnusId;
 
       this.ss.getAllCommentsByStory(this.story.id).subscribe( res3 => {

@@ -23,6 +23,10 @@ export class StoryComponent implements OnInit{
 
   content:any;
 
+
+
+ file:string = "";
+
   constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService, private auth:AuthService, private router:Router, private domSanitizer:DomSanitizer)
   {
     if(this.actRoute.snapshot.paramMap.get('id'))
@@ -38,8 +42,11 @@ export class StoryComponent implements OnInit{
     this.fetching = true;
     this.ss.getStoryById(this.storyId).subscribe(res => {
       this.story = res;
-
-      this.content = this.domSanitizer.bypassSecurityTrustHtml(this.story.content!);
+      this.ss.getContentByFileName(this.story.content!).subscribe(res2 => {
+      this.content = this.domSanitizer.bypassSecurityTrustHtml(res2.content);
+      });
+      
+      //this.domSanitizer.bypassSecurityTrustHtml(this.story.content!);
 
       this.isOwner = this.auth.loggedInId() == this.story.alumnusId;
 

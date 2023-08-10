@@ -6,17 +6,14 @@
 
       <!-- the actual blog post: title/author/date/content -->
       <h3>{{ story.title }}</h3>
-      <p class="lead"><i class="fa fa-user"></i> by <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a>
-      </p>
-      <hr>
-      <p><i class="fa fa-calendar"></i> Posted on {{ story.publishedDate | date}} &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button>
+      <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b><i class="fa fa-user"></i> by: </b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a> &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button>
         &nbsp;<a href=
         "https://api.whatsapp.com/send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/stories/{{storyId}}"
                 data-action="share/whatsapp/share"
                 target="_blank" class="label label-success">
                 <i class="fa fa-whatsapp"></i>
-            </a> 
-      </p>
+            </a> </p>
+      
       <hr class="text-custom" />
       <div [innerHTML]="content"></div>
     </div>
