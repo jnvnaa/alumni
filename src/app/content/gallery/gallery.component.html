@@ -35,7 +35,7 @@
     </div>
 
     <div class="container3" *ngIf="isMobile" >
-        <div class="box" *ngFor="let image of activeImages; let i=index">
+        <div class="box" *ngFor="let image of currentImages; let i=index">
         <img src="{{image.thumb}}" (click)="open(i)" title="{{image.caption}}" />
         </div>
     </div>
