@@ -57,6 +57,8 @@ import { CredmessageComponent } from './alumni/credmessage/credmessage.component
 import { CommitteeComponent } from './content/sjc/committee/committee.component';
 import { ThemesongComponent } from './content/sjc/themesong/themesong.component';
 import { IdentificationComponent } from './alumni/identification/identification.component';
+import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { GoogleloginComponent } from './auth/googlelogin/googlelogin.component';
 
 
 @NgModule({
@@ -99,7 +101,8 @@ import { IdentificationComponent } from './alumni/identification/identification.
     CredmessageComponent,
     CommitteeComponent,
     ThemesongComponent,
-    IdentificationComponent   
+    IdentificationComponent,
+    GoogleloginComponent   
 
   ],
   imports: [
@@ -115,11 +118,31 @@ import { IdentificationComponent } from './alumni/identification/identification.
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    LightboxModule
+    LightboxModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule 
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,
     multi: true
+  },
+
+  {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '567509210686-rlr4i5s443hrb8oj6e8ignbadgrq09ve.apps.googleusercontent.com'
+          )
+        }
+      ],
+      onError: (err) => {
+        console.error(err);
+      }
+    } as SocialAuthServiceConfig,
   }],
   bootstrap: [AppComponent]
 })
