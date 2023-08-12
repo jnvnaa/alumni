@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class GoogleloginComponent implements OnInit{
   user: any;
   loggedIn: any;
+  googleloginin = false;
 
   constructor(private auth:AuthService, private authSoc: SocialAuthService, private router:Router)
   {
@@ -24,13 +25,16 @@ export class GoogleloginComponent implements OnInit{
       this.loggedIn = (user != null);
 
       console.log(user);
+      this.googleloginin = true;
 
       this.auth.onGoogleLogin(user.idToken).subscribe((res:any) => {
+        
         console.log(res);
         localStorage.setItem('token',res.token);
         localStorage.setItem('userid',res.userid);
         localStorage.setItem('name',res.name);
         this.auth.emit(res.userid);
+        this.googleloginin = false;
         this.router.navigate(["alumni"]);
       },
       error => {
