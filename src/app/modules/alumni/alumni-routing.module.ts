@@ -16,6 +16,7 @@ import { NoticeComponent } from 'src/app/home/notice/notice.component';
 import { nonameGuard } from './guard/noname.guard';
 import { GalleryComponent } from 'src/app/content/gallery/gallery.component';
 import { IdentificationComponent } from 'src/app/alumni/identification/identification.component';
+import { TeachersComponent } from 'src/app/content/teachers/teachers.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
       {path: "discussions/:id", component:DiscussionComponent, canActivate:[nonameGuard]},
       {path: "polls", component:PollsComponent, canActivate:[nonameGuard]},
       {path:"stats", component:StatsComponent, canActivate:[nonameGuard]},
+      {path:"teachers", component:TeachersComponent, canActivate:[nonameGuard]},
       {path:"profile/:id", component:ProfileComponent, canActivate:[nonameGuard]},
       {path:"profile", component:ProfileComponent},
       {path:"updateprofile",component:UpdateprofileComponent},

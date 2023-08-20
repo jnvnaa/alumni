@@ -59,6 +59,7 @@ import { ThemesongComponent } from './content/sjc/themesong/themesong.component'
 import { IdentificationComponent } from './alumni/identification/identification.component';
 import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { GoogleloginComponent } from './auth/googlelogin/googlelogin.component';
+import { TeachersComponent } from './content/teachers/teachers.component';
 
 
 @NgModule({
@@ -102,7 +103,8 @@ import { GoogleloginComponent } from './auth/googlelogin/googlelogin.component';
     CommitteeComponent,
     ThemesongComponent,
     IdentificationComponent,
-    GoogleloginComponent   
+    GoogleloginComponent,
+    TeachersComponent   
 
   ],
   imports: [

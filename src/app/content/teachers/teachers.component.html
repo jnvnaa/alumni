@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row head">
+    <div class="col-md-6 pull-left">
+
+      <div><b>Total Staff:</b> {{total}}</div>
+      <div><b>Total Invitation Sent:</b> {{invitation_sent}}</div>
+    </div>
+    <div class="col-md-6">
+      <a class="label label-success  pull-right" (click)="exportExcel()"><i class="fa fa-file-excel-o"></i> Export to Excel</a>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions1">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Current Location</th>
+                  <th scope="col">Service year In JNV Nalbari</th>
+                  <th scope="col">Invitation Sent?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let teacher of teachers2">
+                  <td>{{teacher.id}}</td>
+                <td><img src="/assets/teachers/images/{{teacher.id}}.jpg" height="75px" width="75px" onerror="this.src='/assets/teachers/images/no.jfif';"></td>
+                <td><b>{{teacher.name}}</b></td>
+                <td>{{teacher.subject}}</td>
+                <td>{{ teacher.phone }}</td>
+                <td>{{ teacher.location }}</td>
+                <td>{{ teacher.service_year }}</td>
+                <td><span *ngIf="teacher.invitation_sent">Yes</span><span *ngIf="!teacher.invitation_sent">No</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </div>
+  
