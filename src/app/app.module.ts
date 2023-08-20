@@ -60,6 +60,22 @@ import { IdentificationComponent } from './alumni/identification/identification.
 import { GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { GoogleloginComponent } from './auth/googlelogin/googlelogin.component';
 import { TeachersComponent } from './content/teachers/teachers.component';
+import { BatchrepresentativesComponent } from './content/sjc/batchrepresentatives/batchrepresentatives/batchrepresentatives.component';
+import { EventManagementComponent } from './content/sjc/pages/event-management/event-management/event-management.component';
+import { CulturalComponent } from './content/sjc/pages/cultural/cultural/cultural.component';
+import { FinanceComponent } from './content/sjc/pages/finance/finance/finance.component';
+import { LiteraryComponent } from './content/sjc/pages/literary/literary/literary.component';
+import { ReceptionComponent } from './content/sjc/pages/reception/reception/reception.component';
+import { FoodCateringComponent } from './content/sjc/pages/food-catering/food-catering/food-catering.component';
+import { HealthWellnessComponent } from './content/sjc/pages/health-wellness/health-wellness/health-wellness.component';
+import { TransportAccommodationComponent } from './content/sjc/pages/transport_accommodation/transport-accommodation/transport-accommodation.component';
+import { SportsComponent } from './content/sjc/pages/sports/sports/sports.component';
+import { AuditComponent } from './content/sjc/pages/audit/audit/audit.component';
+import { PlantationComponent } from './content/sjc/pages/plantation/plantation/plantation.component';
+import { ItComponent } from './content/sjc/pages/it/it/it.component';
+import { CoreComponent } from './content/sjc/pages/core/core/core.component';
+import { MediaPublicityComponent } from './content/sjc/pages/media-publicity/media-publicity/media-publicity.component';
+import { LegalComponent } from './content/sjc/pages/legal/legal/legal.component';
 
 
 @NgModule({
@@ -104,7 +120,23 @@ import { TeachersComponent } from './content/teachers/teachers.component';
     ThemesongComponent,
     IdentificationComponent,
     GoogleloginComponent,
-    TeachersComponent   
+    TeachersComponent,
+    BatchrepresentativesComponent,
+    EventManagementComponent,
+    CulturalComponent,
+    FinanceComponent,
+    LiteraryComponent,
+    ReceptionComponent,
+    FoodCateringComponent,
+    HealthWellnessComponent,
+    TransportAccommodationComponent,
+    SportsComponent,
+    AuditComponent,
+    PlantationComponent,
+    ItComponent,
+    CoreComponent,
+    MediaPublicityComponent,
+    LegalComponent   
 
   ],
   imports: [
