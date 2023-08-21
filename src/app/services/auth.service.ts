@@ -27,6 +27,19 @@ export class AuthService {
       return this._http.post(this.baseUrl + "api/auth",obj,this.httpOptions);
   }
 
+  
+  onGoogleLogin(obj:any) : Observable<any>
+  {
+    debugger
+      return this._http.post(this.baseUrl + "api/auth/login-google",JSON.stringify(obj),this.httpOptions);
+  }
+
+
+  onUrlLogin(IdentifierKey:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/auth/" + IdentifierKey + "/login",this.httpOptions);
+  }
+
   emit(id:any)
   {
     this.getLoggedInName.next(id);
@@ -34,7 +47,35 @@ export class AuthService {
 
   isLoggedIn()
   {
-    return !!localStorage.getItem("token");
+    if(!!localStorage.getItem("token"))
+    {
+      if(this.tokenExpired(localStorage.getItem("token")!))
+      {
+        localStorage.clear();
+        return false;
+      }
+
+      return true;
+
+    }
+
+    return false;
+  }
+
+  private tokenExpired(token: string) {
+    const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
+    return (Math.floor((new Date).getTime() / 1000)) >= expiry;
+  }
+
+  isNameSet()
+  {
+    var name = localStorage.getItem("name");
+    if(name && (typeof name === 'string' && name.trim().length > 0 && name != 'null'))
+    {
+      return true;
+    }
+
+    return false;
   }
 
   loggedInId()

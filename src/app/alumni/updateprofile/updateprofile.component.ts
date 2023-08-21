@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlumnusDto, AlumnusInfo, ProfessionalInfo, SocialInfo } from 'src/app/api/models';
 import { AlumniService} from 'src/app/services/alumni.service';
@@ -62,15 +62,15 @@ export class UpdateprofileComponent implements OnInit{
 
   batches = ["Teacher","1994-1995","1995-1996","1996-1997","1997-1998","1998-1999","1999-2000","2000-2001","2001-2002","2002-2003",
               "2003-2004","2004-2005","2005-2006","2006-2007","2007-2008","2008-2009","2009-2010","2010-2011",
-            "2011-2012","2012-2013","2013-2014","2014-2015","2015-2016","2016-2018","2018-2019","2019-2020","2020-2021"]
+            "2011-2012","2012-2013","2013-2014","2014-2015","2015-2016","2016-2017","2017-2018","2018-2019","2019-2020","2020-2021"]
 
   alumniInfoFG = new FormGroup({
     aboutMe: new FormControl(this.alumniInfo.aboutMe),
     houseInJNV: new FormControl(this.alumniInfo.houseInJNV),
     address: new FormControl(this.alumniInfo.address),
-    name: new FormControl(this.alumni.name),
+    name: new FormControl(this.alumni.name, Validators.required),
     email: new FormControl(this.alumni.email),
-    batch: new FormControl(this.alumni.batch)
+    batch: new FormControl(this.alumni.batch, Validators.required)
   })
 
   professionalInfoFG = new FormGroup({
@@ -110,6 +110,11 @@ export class UpdateprofileComponent implements OnInit{
         ['emoji']
       ]
     }
+  }
+
+  isNameNotSet()
+  {
+    return !this.auth.isNameSet();
   }
 
   ngOnInit(): void {
@@ -209,8 +214,6 @@ export class UpdateprofileComponent implements OnInit{
 
   saveAlumni()
   {
-    debugger
-
     this.alumni.email = this.alumniInfoFG.controls["email"].value;
     this.alumni.name = this.alumniInfoFG.controls["name"].value;
 
@@ -226,6 +229,7 @@ export class UpdateprofileComponent implements OnInit{
 
     this.als.updateAlumni(this.alumni).subscribe( res => {
       console.log(res);
+      localStorage.setItem('name',this.alumni.name!);
 
     },
     error => {

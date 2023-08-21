@@ -42,7 +42,7 @@ export class StoriesComponent implements OnInit{
 
   enableEdit()
   {
-    debugger
+
     this.isEdit = true;
     this.isNotEdit = false;
   }

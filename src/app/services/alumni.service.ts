@@ -103,6 +103,11 @@ export class AlumniService {
       return this._http.post(this.baseUrl + "api/alumni/creds/" + id,null);
   }
 
+  getCredMessage(id:any) : Observable<any>
+  {
+      return this._http.post(this.baseUrl + "api/alumni/cred-message/" + id,this.httpOptions);
+  }
+
   disable(id:any) : Observable<any>
   {
       return this._http.post(this.baseUrl + "api/alumni/disable/" + id,null);

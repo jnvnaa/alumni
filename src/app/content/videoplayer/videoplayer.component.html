@@ -1,6 +1,4 @@
 <div>
-    <h2>Theme song</h2>
-
     <vg-player (onPlayerReady)="onPlayerReady($event)">
          <vg-overlay-play></vg-overlay-play>
         <vg-buffering vgFor="singleVideo"></vg-buffering>
@@ -23,7 +21,7 @@
         <video [vgMedia]="$any(media)" 
                 #media id="singleVideo" 
                 preload="auto" 
-                [src]="currentVideo.src" 
+                [src]="src" 
                 crossorigin>
         </video>
     </vg-player>

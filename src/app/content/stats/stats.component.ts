@@ -70,6 +70,30 @@ export class StatsComponent implements OnInit  {
 
    }
 
+   sendCredInWhatsApp(alumni:any)
+   {
+     if(alumni)
+     {
+         this.alumniService.getCredMessage(alumni.id).subscribe(res => {
+           var phone = alumni.phone;
+           if(phone.length == 10)
+           {
+            phone = "91" + phone;
+           }
+
+           var message = res.message.replace("#","%23").replaceAll("\n","%0A");
+
+           var url = "https://wa.me/"+phone+"/?text=" + res.message.replace("#","%23").replace("\n","%0A");
+
+           window.open(url, '_blank');
+         },
+         error => {
+           Swal.fire(error.error.message);
+         });
+      }
+ 
+    }
+
 
    disable(alumni:any)
    {

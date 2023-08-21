@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row head">
+      <div class="col-md-12">
+        <a class="label label-success  pull-right" (click)="exportExcel()"><i class="fa fa-file-excel-o"></i> Export to Excel</a>
+      </div>
+    </div>
+  </div>
+  
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive">
+              <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions">
+                <thead>
+                  <tr>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let br of brs">
+                <td>{{br.Batch}}</td>
+                  <td><b>{{br.Name}}</b></td>
+                  <td>{{ br.Phone }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+    
+    
+        </div>
+      </div>
+    </div>
+    

@@ -34,6 +34,15 @@ export class StoryService {
 
   }
 
+  getContentByFileName(url:string) : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/story/" + url + "/fetch");
+
+  }
+
+
+  
+
   getAllCommentsByStory(id:any) : Observable<any>
   {
       return this._http.get(this.baseUrl + "api/comment/story/" + id);

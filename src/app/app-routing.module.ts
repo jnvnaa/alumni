@@ -14,9 +14,12 @@ import { StoryComponent } from './content/stories/story/story.component';
 import { DiscussionComponent } from './content/discussions/discussion/discussion.component';
 import { NoticeComponent } from './home/notice/notice.component';
 import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
+import { UrlloginComponent } from './auth/urllogin/urllogin.component';
+import { IdentificationComponent } from './alumni/identification/identification.component';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
+  {path: 'login/:id', component:UrlloginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {
     path: 'alumni',

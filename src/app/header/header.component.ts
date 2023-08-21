@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   isNotLoggedIn = false
   isLoggedIn = false
@@ -16,6 +16,16 @@ export class HeaderComponent {
     this.isNotLoggedIn = !this.auth.isLoggedIn();
     this.isLoggedIn = this.auth.isLoggedIn();
   }
+  ngOnInit(): void {
+    if(window.innerWidth < 780)
+    {
+      this.isMobile = true;
+    }
+    else
+    {
+      this.isMobile = false;
+    }
+  }
 
   private changeName(name: string): void {
     this.isNotLoggedIn = !this.auth.isLoggedIn();
@@ -24,7 +34,7 @@ export class HeaderComponent {
 
   logout()
   {
-    debugger
+
     localStorage.clear();
 
     this.isNotLoggedIn = true

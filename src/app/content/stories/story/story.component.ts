@@ -5,6 +5,7 @@ import { AlumniService } from 'src/app/services/alumni.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { StoryService } from 'src/app/services/story.service';
 import Swal from 'sweetalert2';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-story',
@@ -16,12 +17,17 @@ export class StoryComponent implements OnInit{
   story:Story = {};
   storyId:any;
   alumnus:AlumnusDto = {}
-  content:string = "";
   isOwner:boolean = false;
   isAdmin:boolean = false;
   fetching:boolean = false;
 
-  constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService, private auth:AuthService, private router:Router)
+  content:any;
+
+
+
+ file:string = "";
+
+  constructor(private actRoute:ActivatedRoute, private als:AlumniService, private ss:StoryService, private auth:AuthService, private router:Router, private domSanitizer:DomSanitizer)
   {
     if(this.actRoute.snapshot.paramMap.get('id'))
     {
@@ -36,6 +42,11 @@ export class StoryComponent implements OnInit{
     this.fetching = true;
     this.ss.getStoryById(this.storyId).subscribe(res => {
       this.story = res;
+      this.ss.getContentByFileName(this.story.content!).subscribe(res2 => {
+      this.content = this.domSanitizer.bypassSecurityTrustHtml(res2.content);
+      });
+      
+      //this.domSanitizer.bypassSecurityTrustHtml(this.story.content!);
 
       this.isOwner = this.auth.loggedInId() == this.story.alumnusId;
 
@@ -73,5 +84,17 @@ export class StoryComponent implements OnInit{
     })
 
   }
+
+  share() {
+  
+    // Opening URL
+    window.open(
+        "whatsapp://send?text=OK",
+
+        // This is what makes it 
+        // open in a new window.
+        '_blank' 
+    );
+}
 
 }

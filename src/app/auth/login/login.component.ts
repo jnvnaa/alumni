@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
       console.log(res);
       localStorage.setItem('token',res.token);
       localStorage.setItem('userid',res.userid);
+      localStorage.setItem('name',res.name);
       this.auth.emit(res.userid);
       this.router.navigate(["alumni"]);
     },
