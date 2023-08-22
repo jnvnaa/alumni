@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
@@ -76,6 +76,7 @@ import { ItComponent } from './content/sjc/pages/it/it/it.component';
 import { CoreComponent } from './content/sjc/pages/core/core/core.component';
 import { MediaPublicityComponent } from './content/sjc/pages/media-publicity/media-publicity/media-publicity.component';
 import { LegalComponent } from './content/sjc/pages/legal/legal/legal.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -154,7 +155,13 @@ import { LegalComponent } from './content/sjc/pages/legal/legal/legal.component'
     VgBufferingModule,
     LightboxModule,
     SocialLoginModule,
-    GoogleSigninButtonModule 
+    GoogleSigninButtonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }) 
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,
