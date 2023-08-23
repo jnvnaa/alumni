@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar class="icon">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="" routerLink="home" (click)="drawer.toggle()">Home</a>
       <a mat-list-item href="#" routerLink="sjc" (click)="drawer.toggle()">Silver Jubilee</a>
@@ -11,14 +11,14 @@
       <a mat-list-item href="#" routerLink="gallery" (click)="drawer.toggle()">Gallery</a>
       <a mat-list-item href="#" routerLink="teachers" (click)="drawer.toggle()">Teachers/ Staff</a>
       <a mat-list-item href="#" routerLink="stats" (click)="drawer.toggle()">Members</a>
-      <a mat-list-item href="#" routerLink="Profile" (click)="drawer.toggle()">Profile</a>
+      <a mat-list-item href="#" routerLink="profile" (click)="drawer.toggle()">Profile</a>
       <a mat-list-item href="#" (click)="logout()">Logout</a>
     </mat-nav-list>
 
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="#fff">
-      <button
+      <button class="icon"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button

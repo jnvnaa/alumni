@@ -45,9 +45,16 @@
 	color: #EE3268;
 }
 
+.icon
+{
+  color: #fff;
+  background-color: #EE3268;
+}
+
 
 .title
 {
   margin-left: 100px;
   color: #EE3268;
 }
+
