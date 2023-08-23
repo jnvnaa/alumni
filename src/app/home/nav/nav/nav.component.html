@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="" routerLink="home" (click)="drawer.toggle()">Home</a>
+      <a mat-list-item href="#" routerLink="sjc" (click)="drawer.toggle()">Silver Jubilee</a>
+      <a mat-list-item href="#" routerLink="stories" (click)="drawer.toggle()">Stories</a>
+      <a mat-list-item href="" routerLink="discussions" (click)="drawer.toggle()">Discussions</a>
+      <a mat-list-item href="#" routerLink="gallery" (click)="drawer.toggle()">Gallery</a>
+      <a mat-list-item href="#" routerLink="teachers" (click)="drawer.toggle()">Teachers/ Staff</a>
+      <a mat-list-item href="#" routerLink="stats" (click)="drawer.toggle()">Members</a>
+      <a mat-list-item href="#" routerLink="Profile" (click)="drawer.toggle()">Profile</a>
+      <a mat-list-item href="#" (click)="logout()">Logout</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="#fff">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="title">JNVNAA</span>
+      <span class="spacer"></span>
+      <div [class.hidden]="isHandset$ | async" id="mat-nav">
+        <a mat-button href="" class="m-item" routerLink="home" routerLinkActive="active-link">Home</a>
+        <a mat-button href="#" routerLink="sjc"  routerLinkActive="active-link">Silver Jubilee</a>
+        <a mat-button href="#" routerLink="stories"  routerLinkActive="active-link">Stories</a>
+        <a mat-button href="" routerLink="discussions" routerLinkActive="active-link">Discussions</a>
+        <a mat-button href="#" routerLink="gallery"  routerLinkActive="active-link">Gallery</a>
+        <a mat-button href="#" routerLink="teachers"  routerLinkActive="active-link">Teachers/ Staff</a>
+        <a mat-button href="#" routerLink="stats"  routerLinkActive="active-link">Members</a>
+        <a mat-button href="#" routerLink="profile"  routerLinkActive="active-link">Profile</a>
+        <a mat-button href="#" (click)="logout()">Logout</a>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <br />
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

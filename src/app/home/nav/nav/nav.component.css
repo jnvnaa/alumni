@@ -1,0 +1,53 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+/* .sidenav .mat-toolbar {
+  background: inherit;
+} */
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.spacer
+{
+  flex: 1 1 auto;
+}
+
+.hidden
+{
+  display: none;
+}
+
+#mat-nav a
+{
+  padding: 10px;
+}
+
+.active-link,
+.active-link > a:hover,
+.active-link > a:focus
+{
+  color: #fff;
+  background-color: #EE3268;
+}
+
+
+#mat-nav > a:hover {
+	color: #EE3268;
+}
+
+
+.title
+{
+  margin-left: 100px;
+  color: #EE3268;
+}

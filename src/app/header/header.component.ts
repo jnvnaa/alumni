@@ -1,5 +1,7 @@
-import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, inject } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AuthService } from '../services/auth.service';
+import { Observable, map, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +13,9 @@ export class HeaderComponent implements OnInit {
   isNotLoggedIn = false
   isLoggedIn = false
   isMobile:boolean = false
+
+  private breakpointObserver = inject(BreakpointObserver);
+
   constructor(private auth:AuthService, private elementRef: ElementRef){
     auth.getLoggedInName.subscribe(name => this.changeName(name));
     this.isNotLoggedIn = !this.auth.isLoggedIn();
@@ -51,5 +56,13 @@ export class HeaderComponent implements OnInit {
       this.isMobile = false;
     }
   }
+
+
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
 }

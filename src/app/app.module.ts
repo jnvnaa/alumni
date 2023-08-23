@@ -78,6 +78,13 @@ import { MediaPublicityComponent } from './content/sjc/pages/media-publicity/med
 import { LegalComponent } from './content/sjc/pages/legal/legal/legal.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { NavComponent } from './home/nav/nav/nav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -137,7 +144,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ItComponent,
     CoreComponent,
     MediaPublicityComponent,
-    LegalComponent   
+    LegalComponent,
+    NavComponent
 
   ],
   imports: [
@@ -148,7 +156,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     DataTablesModule,
     QuillModule.forRoot(),
     FormsModule,
-    CommonModule, 
+    CommonModule,
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
@@ -161,7 +169,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    }) 
+    }) ,
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    BrowserAnimationsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,
