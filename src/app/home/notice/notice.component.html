@@ -2,8 +2,6 @@
   <div class="row">
     <div class="col-md-12">
 
-<app-overlayspinner *ngIf="fetching"></app-overlayspinner>
-
 <mat-card class="example-card">
   <mat-card-header>
     <mat-card-subtitle><span class="badge">Posted on: {{ notice.publishedDate | date}} </span>
@@ -20,11 +18,15 @@
   <mat-card-content>
     <div [innerHTML]="content"></div>
 
+    <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
+
   </mat-card-content>
   <mat-card-actions>
   </mat-card-actions>
 
 </mat-card>
+
+<br />
 
 </div>
 </div>

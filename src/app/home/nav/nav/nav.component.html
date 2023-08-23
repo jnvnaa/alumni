@@ -27,7 +27,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="title">JNVNAA</span>
-      <span class="spacer"></span>
+      <span [class.hidden]="isHandset$ | async" class="spacer"></span>
       <div [class.hidden]="isHandset$ | async" id="mat-nav">
         <a mat-button href="" class="m-item" routerLink="home" routerLinkActive="active-link">Home</a>
         <a mat-button href="#" routerLink="sjc"  routerLinkActive="active-link">Silver Jubilee</a>

@@ -1,10 +1,14 @@
-<div>
-  <div class="row">
-  <div class="col-md-12">
-    <h3><a routerLink="/alumni/discussions/{{story.id}}">{{ story.title }}</a></h3>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><a routerLink="/alumni/discussions/{{story.id}}">{{ story.title }}</a></mat-card-title>
+    <mat-card-subtitle><b>Added on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b>By:</b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <a routerLink="/alumni/discussions/{{story.id}}">
     <p>{{story.excerpts}}</p>
-    <p><b>Added on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b>By:</b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a> | <b>Total Comments: </b><span class="text-custom">({{ story.commentIds}})</span></p>
-  </div>
-</div>
-<hr class="text-custom" />
-</div>
+  </a>
+    <mat-divider></mat-divider>
+    <b>Total Comments: </b><span class="text-custom">({{ story.commentIds}})</span>
+  </mat-card-content>
+</mat-card>
+<br />
