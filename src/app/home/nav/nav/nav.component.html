@@ -1,3 +1,4 @@
+<div>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -42,7 +43,11 @@
 
     </mat-toolbar>
     <!-- Add Content Here -->
-    <br />
+    <div class="mainbody">
+      <br />
     <router-outlet></router-outlet>
+    <br />
+  </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>

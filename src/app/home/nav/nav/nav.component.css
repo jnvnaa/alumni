@@ -51,6 +51,11 @@
   background-color: #EE3268;
 }
 
+.mainbody
+{
+  background-color: #fff;
+}
+
 
 .title
 {
@@ -58,3 +63,8 @@
   color: #EE3268;
 }
 
+#mat-nav
+{
+
+  padding-right: 100px;
+}
