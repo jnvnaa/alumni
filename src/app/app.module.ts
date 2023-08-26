@@ -85,6 +85,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavComponent } from './home/nav/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GregisterComponent } from './alumni/gregister/gregister.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreComponent,
     MediaPublicityComponent,
     LegalComponent,
-    NavComponent
+    NavComponent,
+    GregisterComponent
 
   ],
   imports: [

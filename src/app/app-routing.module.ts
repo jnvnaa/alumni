@@ -16,8 +16,10 @@ import { NoticeComponent } from './home/notice/notice.component';
 import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.component';
 import { UrlloginComponent } from './auth/urllogin/urllogin.component';
 import { IdentificationComponent } from './alumni/identification/identification.component';
+import { GregisterComponent } from './alumni/gregister/gregister.component';
 
 const routes: Routes = [
+  {path: 'gregister', component:GregisterComponent},
   {path: 'login', component:LoginComponent},
   {path: 'login/:id', component:UrlloginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -26,7 +28,7 @@ const routes: Routes = [
     canActivate: [authGuard],
     loadChildren: () =>
       import('./modules/alumni/alumni.module').then((m) => m.AlumniModule),
-  },  
+  },
   { path: '**', redirectTo: '/login',pathMatch: 'full' },
 ];
 
