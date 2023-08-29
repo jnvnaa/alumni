@@ -11,7 +11,7 @@ export class UrlService {
 
   //baseUrl = "https://jnvnaa-alumni-service.azurewebsites.net/";
 
-  baseUrl = "http://test.ngmhospital.in/";
+  baseUrl = "https://test.ngmhospital.in/";
 
   getBaseUrl()
   {
