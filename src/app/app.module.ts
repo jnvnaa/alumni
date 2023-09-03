@@ -86,6 +86,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavComponent } from './home/nav/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GregisterComponent } from './alumni/gregister/gregister.component';
+import { GrComponent } from './content/sjc/gr/gr.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +148,8 @@ import { GregisterComponent } from './alumni/gregister/gregister.component';
     MediaPublicityComponent,
     LegalComponent,
     NavComponent,
-    GregisterComponent
+    GregisterComponent,
+    GrComponent
 
   ],
   imports: [
