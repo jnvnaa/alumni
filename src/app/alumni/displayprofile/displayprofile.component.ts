@@ -18,6 +18,7 @@ export class DisplayprofileComponent  implements OnInit{
   socialInfo:SocialInfo = {}
   alumni:AlumnusDto = {}
   image:any;
+  alumniGf:any = {}
 
   constructor(private als:AlumniService, private auth:AuthService, private router:Router)
   {
@@ -32,6 +33,11 @@ export class DisplayprofileComponent  implements OnInit{
       this.als.getAlumniById(this.alumniId).subscribe( res =>
       {
         this.alumni = res;
+
+        this.als.getGfByPhone(res.phone).subscribe(res =>
+          {
+              this.alumniGf = res;
+          });
 
       })
       this.als.getAlumniInfo(this.alumniId).subscribe(res =>
