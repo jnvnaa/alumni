@@ -2,21 +2,33 @@
   <div class="row">
     <div class="col-md-12">
 
-      <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
-
-      <!-- the actual blog post: title/author/date/content -->
-      <h3>{{ story.title }}</h3>
-      <p><b>Published on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b><i class="fa fa-user"></i> by: </b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a> &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button>
-        &nbsp;<a href=
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ story.title }}</mat-card-title>
+    <mat-card-subtitle><b>Added on: </b><span class="text-custom">{{ story.publishedDate | date}} </span> | <b> <i class="fa fa-user"></i> by: </b> <a routerLink="/alumni/profile/{{alumnus.id}}"><span  class="text-custom">{{ alumnus.name }} ( Batch - {{ alumnus.batch}})</span></a> |  &nbsp;&nbsp; <button type="button" *ngIf="isOwner || isAdmin" (click)="disable()" class="btn btn-danger"><i class="fa fa-trash"></i> &nbsp;Delete</button>
+      &nbsp;
+      <a href=
         "https://api.whatsapp.com/send?text={{story.title}}. https://alumni.jnvnaa.in/%23/alumni/stories/{{storyId}}"
                 data-action="share/whatsapp/share"
                 target="_blank" class="label label-success">
                 <i class="fa fa-whatsapp"></i>
-            </a> </p>
-      
-      <hr class="text-custom" />
-      <div [innerHTML]="content"></div>
-    </div>
-  </div>
-    <hr class="text-custom" />
+            </a>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <br />
+    <div [innerHTML]="content"></div>
+
+    <app-overlayspinner *ngIf="fetching"></app-overlayspinner>
+
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+
+</mat-card>
+
+<br />
+
+</div>
+</div>
 </div>

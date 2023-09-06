@@ -1,13 +1,16 @@
-<div>
-  <div class="row">
-  <div class="col-md-12">
-
-    <h3><a routerLink="/alumni/notices/{{notice.id}}">{{ notice.title }}</a></h3>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle><span class="badge">Posted on: {{ notice.publishedDate | date}} </span></mat-card-subtitle>
+    <mat-card-title><a routerLink="/alumni/notices/{{notice.id}}">{{ notice.title }}</a></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     <p>{{ notice.excerpts }}</p>
-    <div>
-    <span class="badge">Posted on: {{ notice.publishedDate | date}} </span><div class="pull-right"><a class="btn btn-primary btn-sm" routerLink="/alumni/notices/{{notice.id}}">Read more</a></div>
-     </div>
-  </div>
-</div>
-<hr class="text-custom" />
-</div>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+    <div><a class="btn btn-primary btn-sm" routerLink="/alumni/notices/{{notice.id}}">Read more</a></div>
+  </mat-card-actions>
+
+</mat-card>
+<br />

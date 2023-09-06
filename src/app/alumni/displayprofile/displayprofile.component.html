@@ -1,28 +1,58 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div style="text-align: center; ">
-          <a> <img src="{{ image }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-          <h3 class="media-heading">{{ alumni.name }} <small> Batch - {{ alumni.batch }}</small></h3>
 
-          <p><b>Phone:</b> {{ alumni.phone }}, <b>Email:</b> {{ alumni.email }}</p>
+      <mat-card class="example-card">
+        <mat-card-content>
+          <div style="text-align: center; ">
+            <a> <img src="{{ image }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            <h3 class="media-heading">{{ alumni.name }} <small> Batch - {{ alumni.batch }}</small></h3>
+  
+            <p><b>Phone:</b> {{ alumni.phone }}, <b>Email:</b> {{ alumni.email }}</p>
+  
+            <p><b>{{ professionalInfo.profession }}</b><span *ngIf="professionalInfo.designation" >, {{ professionalInfo.designation }} </span><span *ngIf="professionalInfo.organization" >({{professionalInfo.organization}})</span> </p>
+              <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
+              <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>
+              <a href="{{ socialInfo.linkedIn }}" target="_blank" class="label label-success"><i class="fa fa-linkedin"></i></a>
+            </div>
+  
+            <hr class="text-custom" />
+            <div style="text-align: center; " class="text-center">
+            <p class="text-left"><strong>Bio: </strong></p>
+              <div class="text-left" [innerHTML]="alumniInfo.aboutMe"></div>
+            <br>
+            <hr class="text-custom" />
+            <p *ngIf="alumniInfo.address" class="pull-left"><b>Address: </b>{{ alumniInfo.address }}</p>
+            <p *ngIf="alumniInfo.houseInJNV" class="pull-right"><b>House: </b>{{ alumniInfo.houseInJNV }}</p>
+  
+            </div>
+        </mat-card-content>
+      </mat-card>
 
-          <p><b>{{ professionalInfo.profession }}</b><span *ngIf="professionalInfo.designation" >, {{ professionalInfo.designation }} </span><span *ngIf="professionalInfo.organization" >({{professionalInfo.organization}})</span> </p>
-            <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
-            <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>
-            <a href="{{ socialInfo.linkedIn }}" target="_blank" class="label label-success"><i class="fa fa-linkedin"></i></a>
-          </div>
+      <br />
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Data from Google Registration Form</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <p>
+          <b>Name: </b> {{ alumniGf.name }} <br />
+          <b>Email: </b> {{ alumniGf.email }} <br />
+          <b>Phone: </b> {{ alumniGf.phoneNumber }} <br />
+          <b>Batch (10th Board Exam): </b> {{ alumniGf.batch }} <br />
+          <b>Participating in Sports: </b> {{ alumniGf.sports }} <br />
+          <b>Participating in Cultural Event: </b> {{ alumniGf.culturalEvent }} <br />
+          <b>Contributed For SJC: </b> {{ alumniGf.contributedForSJC }} <br />
+          <b>Size Of T-Shirt: </b> {{ alumniGf.sizeOfTShirt }} <br />
+          <b>Meal Preference: </b> {{ alumniGf.mealPreference }} <br />
+          <b>Accompanying Numbers: </b> {{ alumniGf.accompanyingNumbers }} <br />
+          <b>visiting Old Campus: </b> {{ alumniGf.visitingOldCampus }} <br />
+          <b>Accommodation Assistance Required: </b> {{ alumniGf.accommodationAssistanceRequired }} <br />
+          </p>
+        </mat-card-content>      
+      </mat-card>
 
-          <hr class="text-custom" />
-          <div style="text-align: center; " class="text-center">
-          <p class="text-left"><strong>Bio: </strong></p>
-            <div class="text-left" [innerHTML]="alumniInfo.aboutMe"></div>
-          <br>
-          <hr class="text-custom" />
-          <p *ngIf="alumniInfo.address" class="pull-left"><b>Address: </b>{{ alumniInfo.address }}</p>
-          <p *ngIf="alumniInfo.houseInJNV" class="pull-right"><b>House: </b>{{ alumniInfo.houseInJNV }}</p>
-
-          </div>
     </div>
   </div>
 </div>

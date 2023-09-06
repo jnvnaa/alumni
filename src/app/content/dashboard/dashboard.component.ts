@@ -7,8 +7,4 @@ import { Component, HostListener } from '@angular/core';
 })
 export class DashboardComponent {
 
-  @HostListener('contextmenu', ['$event'])
-  onRightClick(event: { preventDefault: () => void; }) {
-    event.preventDefault();
-  }
 }

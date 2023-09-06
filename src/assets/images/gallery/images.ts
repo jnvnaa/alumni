@@ -642,6 +642,11 @@ export const galleryImages = [{"id":1, "desc":"1998-1999", "src": "1.jpeg", "cap
 {"id":642, "desc":"Others", "src": "7 (15).jpg", "caption": "Others","thumb":""},
 {"id":643, "desc":"Others", "src": "7 (16).jpg", "caption": "Others","thumb":""},
 {"id":644, "desc":"Others", "src": "7 (17).jpg", "caption": "Others","thumb":""},
-
+{"id":645, "desc":"Batch 2003-2010", "src": "1 (1).jpg", "caption": "Batch 2003-2010","thumb":""},
+{"id":646, "desc":"Batch 2003-2010", "src": "1 (2).jpg", "caption": "Batch 2003-2010","thumb":""},
+{"id":647, "desc":"Batch 2003-2010", "src": "1 (3).jpg", "caption": "Batch 2003-2010","thumb":""},
+{"id":648, "desc":"Batch 2003-2010", "src": "1 (4).jpg", "caption": "Batch 2003-2010","thumb":""},
+{"id":649, "desc":"Batch 2003-2010", "src": "1 (5).jpg", "caption": "Batch 2003-2010","thumb":""},
+{"id":650, "desc":"Batch 2003-2010", "src": "1 (6).jpg", "caption": "Batch 2003-2010","thumb":""},
 
 ]

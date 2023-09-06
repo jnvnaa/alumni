@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common'
 @Component({
   selector: 'app-noticeexcerpt',
   templateUrl: './noticeexcerpt.component.html',
-  styleUrls: ['./noticeexcerpt.component.css']
+  styleUrls: ['./noticeexcerpt.component.css'],
 })
 export class NoticeexcerptComponent {
   @Input() notice:Story = {};

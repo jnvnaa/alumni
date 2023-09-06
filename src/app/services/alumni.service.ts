@@ -33,6 +33,18 @@ export class AlumniService {
 
   }
 
+  getAllGf() : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/alumni/gf");
+
+  }
+
+  getGfByPhone(phone:string) : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/alumni/gf/" + phone);
+
+  }
+
   getAlumniStats() : Observable<any>
   {
       return this._http.get(this.baseUrl + "api/alumni/stats");
