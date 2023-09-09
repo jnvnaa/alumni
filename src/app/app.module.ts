@@ -87,6 +87,7 @@ import { NavComponent } from './home/nav/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GregisterComponent } from './alumni/gregister/gregister.component';
 import { GrComponent } from './content/sjc/gr/gr.component';
+import { SendcredComponent } from './auth/sendcred/sendcred.component';
 
 @NgModule({
   declarations: [
@@ -149,8 +150,8 @@ import { GrComponent } from './content/sjc/gr/gr.component';
     LegalComponent,
     NavComponent,
     GregisterComponent,
-    GrComponent
-
+    GrComponent,
+    SendcredComponent
   ],
   imports: [
     BrowserModule,

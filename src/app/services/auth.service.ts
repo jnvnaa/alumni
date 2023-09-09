@@ -27,6 +27,11 @@ export class AuthService {
       return this._http.post(this.baseUrl + "api/auth",obj,this.httpOptions);
   }
 
+  sendcredential(obj:any) : Observable<any>
+  {
+    debugger
+    return this._http.post(this.baseUrl + "api/auth/mailcredential",JSON.stringify(obj),this.httpOptions);
+  }
   
   onGoogleLogin(obj:any) : Observable<any>
   {
