@@ -16,6 +16,8 @@ export class SendcredComponent {
     email: new FormControl("", Validators.required)
   })
 
+  busy = false;
+
   constructor(private auth:AuthService, private router:Router)
   {
   }
@@ -27,6 +29,7 @@ export class SendcredComponent {
 
   send()
   {
+    this.busy = true;
     var email = this.emailFG.value!;
     this.auth.sendcredential(email.email).subscribe( res => {
         console.log(res);
@@ -46,10 +49,14 @@ export class SendcredComponent {
             icon: 'warning'
           })
         }
+
+        this.busy = false;
       },
       error => {
         console.log(error);
         Swal.fire(error.error);
+
+        this.busy = false;
       }
     )
 
