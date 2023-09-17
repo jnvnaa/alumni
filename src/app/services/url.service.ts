@@ -7,9 +7,9 @@ export class UrlService {
 
   constructor() { }
 
-  baseUrl = "http://localhost:5024/";
+  //baseUrl = "http://localhost:5024/";
 
-  //baseUrl = "https://jnvnaa-alumni-service.azurewebsites.net/";
+  baseUrl = "https://jnvnaa-alumni-service.azurewebsites.net/";
 
   //baseUrl = "https://test.ngmhospital.in/";
 
