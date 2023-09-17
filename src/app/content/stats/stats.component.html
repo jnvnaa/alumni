@@ -23,9 +23,10 @@
           <table class="table re" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
             <thead>
               <tr>
-                <th scope="col">Batch</th>
+                <th scope="col">Batch (10th Board)</th>
                 <th scope="col">Name</th>
                 <th scope="col">Phone</th>
+                <th scope="col">Email</th>
                 <th *ngIf="isAdmin" scope="col">Action</th>
               </tr>
             </thead>
@@ -34,6 +35,7 @@
                 <td><b>{{alumni.batch}}</b></td>
                 <td><a routerLink="/alumni/profile/{{ alumni.id  }}" >{{alumni.name}}</a></td>
                 <td ><a href="https://wa.me/91{{alumni.phone}}">{{alumni.phone }}</a></td>
+                <td >{{alumni.email }}</td>
                 <td *ngIf="isAdmin" ><a class="label label-danger" (click)="disable(alumni)"><span class="fa fa-trash"></span></a></td>
               </tr>
             </tbody>
