@@ -17,9 +17,11 @@ import { PhoneregisterComponent } from './alumni/phoneregister/phoneregister.com
 import { UrlloginComponent } from './auth/urllogin/urllogin.component';
 import { IdentificationComponent } from './alumni/identification/identification.component';
 import { GregisterComponent } from './alumni/gregister/gregister.component';
+import { SendcredComponent } from './auth/sendcred/sendcred.component';
 
 const routes: Routes = [
   {path: 'gregister', component:GregisterComponent},
+  {path: 'forgotpassword', component:SendcredComponent},
   {path: 'login', component:LoginComponent},
   {path: 'login/:id', component:UrlloginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},

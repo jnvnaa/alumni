@@ -9,9 +9,9 @@ export class UrlService {
 
   //baseUrl = "http://localhost:5024/";
 
-  //baseUrl = "https://jnvnaa-alumni-service.azurewebsites.net/";
+  baseUrl = "https://jnvnaa-alumni-service.azurewebsites.net/";
 
-  baseUrl = "https://test.ngmhospital.in/";
+  //baseUrl = "https://test.ngmhospital.in/";
 
   getBaseUrl()
   {

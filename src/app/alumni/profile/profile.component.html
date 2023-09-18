@@ -1,6 +1,6 @@
 
 
-<app-displayprofile [alumniId]="id" *ngIf="isNotEdit"></app-displayprofile>
+<app-displayprofile [alumniId]="id" [owner]="owner" *ngIf="isNotEdit"></app-displayprofile>
 
 <app-updateprofile  *ngIf="isEdit" (search)="editCompleted()"></app-updateprofile>
 

@@ -13,6 +13,8 @@ export class DisplayprofileComponent  implements OnInit{
 
   @Input() alumniId = 0;
 
+  @Input() owner:boolean = false;
+
   alumniInfo:AlumnusInfo = {}
   professionalInfo:ProfessionalInfo = {}
   socialInfo:SocialInfo = {}
