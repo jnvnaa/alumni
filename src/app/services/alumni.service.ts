@@ -99,6 +99,11 @@ export class AlumniService {
 
   }
 
+  getQr(id: number) : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/alumni/qr/" + id);
+  }
+
   getAlumniById(id: number) : Observable<any>
   {
       return this._http.get(this.baseUrl + "api/alumni/" + id);

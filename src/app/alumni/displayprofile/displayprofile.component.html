@@ -7,15 +7,15 @@
           <div style="text-align: center; ">
             <a> <img src="{{ image }}" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
             <h3 class="media-heading">{{ alumni.name }} <small> Batch - {{ alumni.batch }}</small></h3>
-  
+
             <p><b>Phone:</b> {{ alumni.phone }}, <b>Email:</b> {{ alumni.email }}</p>
-  
+
             <p><b>{{ professionalInfo.profession }}</b><span *ngIf="professionalInfo.designation" >, {{ professionalInfo.designation }} </span><span *ngIf="professionalInfo.organization" >({{professionalInfo.organization}})</span> </p>
               <a href="{{ socialInfo.facebook }}" target="_blank" class="label label-warning"><i class="fa fa-facebook"></i></a>
               <a href="{{ socialInfo.twitter }}" target="_blank" class="label label-info"><i class="fa fa-twitter"></i></a>
               <a href="{{ socialInfo.linkedIn }}" target="_blank" class="label label-success"><i class="fa fa-linkedin"></i></a>
             </div>
-  
+
             <hr class="text-custom" />
             <div style="text-align: center; " class="text-center">
             <p class="text-left"><strong>Bio: </strong></p>
@@ -24,7 +24,7 @@
             <hr class="text-custom" />
             <p *ngIf="alumniInfo.address" class="pull-left"><b>Address: </b>{{ alumniInfo.address }}</p>
             <p *ngIf="alumniInfo.houseInJNV" class="pull-right"><b>House: </b>{{ alumniInfo.houseInJNV }}</p>
-  
+
             </div>
         </mat-card-content>
       </mat-card>
@@ -35,7 +35,7 @@
           <mat-card-title>Data from Google Registration Form</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          
+
           <p>
           <b>Name: </b> {{ alumniGf.name }} <br />
           <b>Email: </b> {{ alumniGf.email }} <br />
@@ -50,9 +50,27 @@
           <b>visiting Old Campus: </b> {{ alumniGf.visitingOldCampus }} <br />
           <b>Accommodation Assistance Required: </b> {{ alumniGf.accommodationAssistanceRequired }} <br />
           </p>
-        </mat-card-content>      
+        </mat-card-content>
       </mat-card>
 
+    </div>
+  </div>
+</div>
+
+
+<div class="container"  *ngIf="owner">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="text-align: center; ">
+
+
+        <div id="icard">
+          <img style="margin-top: 200px;" src="{{qrfile}}" />
+
+        </div>
+
+        </div>
+        <button class="btn btn-info" id="btn" (click)="save()">Download</button>
     </div>
   </div>
 </div>
