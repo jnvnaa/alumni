@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AlumnusDto, AlumnusInfo, ProfessionalInfo, SocialInfo } from 'src/app/api/models';
 import { AlumniService } from 'src/app/services/alumni.service';
 import { AuthService } from 'src/app/services/auth.service';
-import domtoimage from 'dom-to-image';
 
 @Component({
   selector: 'app-displayprofile',
@@ -40,11 +39,18 @@ export class DisplayprofileComponent  implements OnInit{
 
       })
 
-      this.als.getQr(this.alumniId).subscribe( res =>
-        {
-          this.qrfile = res.file;
+      this.als.getAlumniById(this.alumniId).subscribe( res =>
+      {
+        this.alumni = res;
 
-        })
+      })
+
+      this.als.getQr(this.alumniId).subscribe( res =>
+      {
+        this.qrfile = res.file;
+
+      })
+
       this.als.getAlumniInfo(this.alumniId).subscribe(res =>
       {
         this.alumniInfo = res;
@@ -67,15 +73,5 @@ export class DisplayprofileComponent  implements OnInit{
   reload()
   {
     this.ngOnInit()
-  }
-
-  save() {
-    // Select the element that you want to capture
-    var node = document.getElementById('icard')!;
-
-    domtoimage.toBlob(node)
-    .then(function (blob) {
-        window.saveAs(blob, 'jnvnsjc-digicard.png');
-    });
   }
 }

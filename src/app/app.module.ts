@@ -88,6 +88,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GregisterComponent } from './alumni/gregister/gregister.component';
 import { GrComponent } from './content/sjc/gr/gr.component';
 import { SendcredComponent } from './auth/sendcred/sendcred.component';
+import { DigicardComponent } from './alumni/digicard/digicard.component';
 
 @NgModule({
   declarations: [
@@ -151,7 +152,8 @@ import { SendcredComponent } from './auth/sendcred/sendcred.component';
     NavComponent,
     GregisterComponent,
     GrComponent,
-    SendcredComponent
+    SendcredComponent,
+    DigicardComponent
   ],
   imports: [
     BrowserModule,

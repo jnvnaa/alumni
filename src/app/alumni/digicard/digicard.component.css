@@ -1,0 +1,30 @@
+#icard
+{
+  background-image: url("/assets/images/di.png");
+  width: 800px;
+  height: 1028px;
+}
+
+#barcode
+{
+    margin-top: 230px;
+}
+
+#icard p{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.name
+{
+    font-size: 70px;
+    font-weight: bold;
+    color: chocolate;
+}
+
+.batch
+{
+    font-size: 65px;
+    font-weight: bold;
+    color:darkblue;
+}
