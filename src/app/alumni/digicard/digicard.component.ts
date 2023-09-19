@@ -16,9 +16,9 @@ export class DigicardComponent {
     // Select the element that you want to capture
     var node = document.getElementById('icard')!;
 
-    domtoimage.toBlob(node)
+    domtoimage.toPng(node).then((doc) => domtoimage.toPng(node)
     .then(function (blob) {
         window.saveAs(blob, 'jnvnsjc-digicard.png');
-    });
+    }));
   }
 }
