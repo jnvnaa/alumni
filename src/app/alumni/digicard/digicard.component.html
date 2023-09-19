@@ -1,18 +1,19 @@
 <div class="container">
 <div class="row">
     <div class="col-md-12">
+        <button class="btn btn-info" id="btn-download" (click)="save()">Download Digital Identity Card </button>
     <div style="text-align: center; ">
         <div id="icard">
         <img id="barcode" src="{{qrfile}}" />
 
-        <p><span class="name">{{ name }}</span><br /><br /><br />
-            <span class="batch">Batch of {{ batch }} (X<sup>th</sup>)</span>
+        <p><span class="{{ name.length > 16? 'name' : 'namelong' }}">{{ name }}</span><br /><br /><br />
+            <span class="batch">Batch of {{ batch }}</span>
         </p>
 
         </div>
 
         </div>
-        <button class="btn btn-info" id="btn" (click)="save()">Download</button>
+        
     </div>
 </div>
 </div>

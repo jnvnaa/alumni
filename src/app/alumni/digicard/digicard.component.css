@@ -22,9 +22,21 @@
     color: chocolate;
 }
 
+.namelong
+{
+    font-size: 50px;
+    font-weight: bold;
+    color: chocolate;
+}
+
 .batch
 {
     font-size: 65px;
     font-weight: bold;
     color:darkblue;
+}
+
+#btn-download
+{
+    margin-bottom: 10px;
 }

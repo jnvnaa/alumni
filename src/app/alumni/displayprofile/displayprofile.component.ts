@@ -22,6 +22,7 @@ export class DisplayprofileComponent  implements OnInit{
   image:any;
   alumniGf:any = {}
   qrfile = "";
+  batchRange = "";
 
   constructor(private als:AlumniService, private auth:AuthService, private router:Router)
   {
@@ -37,11 +38,8 @@ export class DisplayprofileComponent  implements OnInit{
       {
         this.alumni = res;
 
-      })
-
-      this.als.getAlumniById(this.alumniId).subscribe( res =>
-      {
-        this.alumni = res;
+        var b = Number(res.batch);
+        this.batchRange = (b -5) + '-' + (b + 2);
 
       })
 
