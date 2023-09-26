@@ -89,6 +89,9 @@ import { GregisterComponent } from './alumni/gregister/gregister.component';
 import { GrComponent } from './content/sjc/gr/gr.component';
 import { SendcredComponent } from './auth/sendcred/sendcred.component';
 import { DigicardComponent } from './alumni/digicard/digicard.component';
+import { AvatarComponent } from './alumni/avatar/avatar.component';
+import { ImageCropperComponent } from './alumni/avatar/image-cropper/image-cropper.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -153,7 +156,9 @@ import { DigicardComponent } from './alumni/digicard/digicard.component';
     GregisterComponent,
     GrComponent,
     SendcredComponent,
-    DigicardComponent
+    DigicardComponent,
+    AvatarComponent,
+    ImageCropperComponent
   ],
   imports: [
     BrowserModule,
@@ -182,7 +187,8 @@ import { DigicardComponent } from './alumni/digicard/digicard.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CustomInterceptor,

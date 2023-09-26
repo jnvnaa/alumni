@@ -38,13 +38,15 @@
               "node_modules/quill/dist/quill.bubble.css",
               "node_modules/quill/dist/quill.snow.css",
               "node_modules/quill-emoji/dist/quill-emoji.css",
-              "node_modules/@videogular/ngx-videogular/fonts/videogular.css"
+              "node_modules/@videogular/ngx-videogular/fonts/videogular.css",
+              "node_modules/cropperjs/dist/cropper.css"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
               "src/assets/js/bootstrap.min.js",
               "node_modules/datatables.net/js/jquery.dataTables.min.js",
-              "node_modules/quill/dist/quill.min.js"
+              "node_modules/quill/dist/quill.min.js",
+              "node_modules/cropperjs/dist/cropper.js"
             ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"

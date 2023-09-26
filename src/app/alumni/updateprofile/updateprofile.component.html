@@ -44,12 +44,13 @@
                     <div class="form-group">
                       <label class="col-lg-3 control-label">Email:</label>
                       <div class="col-lg-8">
-                        <input class="form-control" type="text" formControlName="email">
+                        <label class="form-control" type="text">{{ alumni.email }}</label>
+                        
                       </div>
                     </div>
 
                     <div class="form-group">
-                      <label class="col-lg-3 control-label">Batch/ Teacher: <span class="text-danger">*</span></label>
+                      <label class="col-lg-3 control-label">Batch (10th Board): <span class="text-danger">*</span></label>
                       <div class="col-lg-8">
                         <select class="form-control" id="country" formControlName="batch" [(ngModel)]="alumni.batch">
                           <option [ngValue]="null" disabled>--Select Batch/ Teacher--</option>
