@@ -34,4 +34,4 @@
 
 <br />
 
-<app-digicard [name]="alumni.name" [batch]="batchRange" [qrfile]="qrfile"></app-digicard>
+<app-digicard *ngIf="owner || admin" [name]="alumni.name" [batch]="batchRange" [qrfile]="qrfile"></app-digicard>

@@ -24,9 +24,11 @@ export class DisplayprofileComponent  implements OnInit{
   qrfile = "";
   batchRange = "";
 
+  admin = false;
+
   constructor(private als:AlumniService, private auth:AuthService, private router:Router)
   {
-
+    this.admin = auth.isAdmin();
   }
 
 
@@ -39,7 +41,14 @@ export class DisplayprofileComponent  implements OnInit{
         this.alumni = res;
 
         var b = Number(res.batch);
-        this.batchRange = (b -5) + '-' + (b + 2);
+        if(b == 1999)
+        {
+          this.batchRange = (b -5) + '-' + b;
+        }
+        else
+        {
+          this.batchRange = (b -5) + '-' + (b + 2);
+        }
 
       })
 
