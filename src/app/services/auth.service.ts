@@ -32,7 +32,7 @@ export class AuthService {
     debugger
     return this._http.post(this.baseUrl + "api/auth/mailcredential",JSON.stringify(obj),this.httpOptions);
   }
-  
+
   onGoogleLogin(obj:any) : Observable<any>
   {
 

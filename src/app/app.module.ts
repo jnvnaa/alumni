@@ -92,6 +92,7 @@ import { DigicardComponent } from './alumni/digicard/digicard.component';
 import { AvatarComponent } from './alumni/avatar/avatar.component';
 import { ImageCropperComponent } from './alumni/avatar/image-cropper/image-cropper.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { QrComponent } from './content/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -158,7 +159,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     SendcredComponent,
     DigicardComponent,
     AvatarComponent,
-    ImageCropperComponent
+    ImageCropperComponent,
+    QrComponent
   ],
   imports: [
     BrowserModule,
