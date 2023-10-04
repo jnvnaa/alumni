@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
 })
 export class SjcComponent {
 
+  isAdmin = false;
+
+  constructor(private auth:AuthService)
+  {
+    this.isAdmin = auth.isAdmin();
+  }
 
 }
