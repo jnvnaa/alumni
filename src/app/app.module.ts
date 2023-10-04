@@ -93,6 +93,7 @@ import { AvatarComponent } from './alumni/avatar/avatar.component';
 import { ImageCropperComponent } from './alumni/avatar/image-cropper/image-cropper.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { QrComponent } from './content/qr/qr.component';
+import { AttendanceComponent } from './content/attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -160,7 +161,8 @@ import { QrComponent } from './content/qr/qr.component';
     DigicardComponent,
     AvatarComponent,
     ImageCropperComponent,
-    QrComponent
+    QrComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,
