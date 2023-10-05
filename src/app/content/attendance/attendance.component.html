@@ -1,7 +1,9 @@
 <div class="container">
+  <mat-card class="example-card">
+    <mat-card-content>
+
     <div class="row register-phone">
       <div class="col-md-12">
-
         <div class="form-group">
             <label class="col-lg-3 control-label">Select Event: <span class="text-danger">*</span></label>
             <div class="col-lg-8">
@@ -10,14 +12,15 @@
             </select>
             </div>
           </div>
-
-        <span class="badge badge-secondary"><b>Total Alumni:</b> {{ totalAlumni }}</span> <br />
+          <br /><br />
+        <span class="badge badge-secondary"><b>Total Alumni:</b> {{ totalAlumni }}</span> 
+        <br /><br />
         <span class="badge badge-secondary"><b>Total Footfall:</b> {{ totalFootfall }}</span>
       </div>
     </div>
-  </div>
-  
-  <div class="container">
+
+    <hr />
+
     <div class="row">
       <div class="col-md-12">
         <div class="row">
@@ -48,5 +51,8 @@
   
       </div>
     </div>
+  </mat-card-content>
+</mat-card>
+
   </div>
   

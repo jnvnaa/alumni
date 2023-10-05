@@ -36,7 +36,8 @@ export class AttendanceComponent implements OnInit  {
     this.dtOptions = {
       pagingType: "full_numbers",
       pageLength: 50,
-      order: [[0, 'desc']]
+      order: [[0, 'desc']],
+      destroy: true
     }
 
     this.als.getEventNames().subscribe( (res:any) => {
