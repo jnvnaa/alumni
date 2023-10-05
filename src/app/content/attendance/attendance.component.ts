@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlumniService } from 'src/app/services/alumni.service';
 import { Attendance } from './attendance';
-import { Subject } from 'rxjs';
+import { Subject, Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-attendance',
@@ -9,7 +9,6 @@ import { Subject } from 'rxjs';
   styleUrls: ['./attendance.component.css']
 })
 export class AttendanceComponent implements OnInit  {
-
 
   attendences: Attendance[] = [];
 
@@ -47,6 +46,27 @@ export class AttendanceComponent implements OnInit  {
     this.als.getAttendance().subscribe( (res:any) =>{
       this.attendences = res;
     });
+
+    const obs$ = interval(5000);
+
+    obs$.subscribe( (d) => {
+        this.update();
+    });
+  }
+
+  update()
+  {
+    if(this.selectedEvent == "" && this.eventNames.length > 0)
+    {
+      this.selectedEvent = this.eventNames[0];
+      this.onSelectChange("");
+    }
+
+    this.als.getAttendance().subscribe( (res:any) =>{
+      this.attendences = res;
+      this.onSelectChange("");
+    });
+
   }
 
   onSelectChange($event: any) {
