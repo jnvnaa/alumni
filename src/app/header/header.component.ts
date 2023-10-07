@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   isNotLoggedIn = false
   isLoggedIn = false
   isMobile:boolean = false
+  isAdmin = false
 
   private breakpointObserver = inject(BreakpointObserver);
 
@@ -20,6 +21,8 @@ export class HeaderComponent implements OnInit {
     auth.getLoggedInName.subscribe(name => this.changeName(name));
     this.isNotLoggedIn = !this.auth.isLoggedIn();
     this.isLoggedIn = this.auth.isLoggedIn();
+
+    this.isAdmin = auth.isAdmin();
   }
   ngOnInit(): void {
     if(window.innerWidth < 780)

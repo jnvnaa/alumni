@@ -61,13 +61,12 @@ export class IdentificationComponent implements OnInit{
     this.saving = true;
 
     this.als.updateAlumni(this.alumni).subscribe( res => {
-      console.log(res);
+
       localStorage.setItem('name',this.alumni.name!);
       this.router.navigate(["alumni"]);
 
     },
     error => {
-      console.log(error);
       Swal.fire("Oops!! Something went wrong. Please contact IT Team")
       this.saving = false;
     });

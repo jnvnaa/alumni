@@ -1,0 +1,58 @@
+<div class="container">
+  <mat-card class="example-card">
+    <mat-card-content>
+
+    <div class="row register-phone">
+      <div class="col-md-12">
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Select Event: <span class="text-danger">*</span></label>
+            <div class="col-lg-8">
+              <select class="form-control" [(ngModel)]="selectedEvent"  (ngModelChange)="onSelectChange($event)" >
+                <option *ngFor="let c of eventNames" [ngValue]="c">{{c}}</option>
+            </select>
+            </div>
+          </div>
+          <br /><br />
+        <span class="badge badge-secondary"><b>Total Alumni:</b> {{ totalAlumni }}</span> 
+        <br /><br />
+        <span class="badge badge-secondary"><b>Total Footfall:</b> {{ totalFootfall }}</span>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table re" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+              <thead>
+                <tr>
+                  <th scope="col">Batch (10th Board)</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">number Of Accompanied</th>
+                  <th scope="col">Remark</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let attendance of selectedAttendances">
+                  <td><b>{{attendance.batch}}</b></td>
+                  <td>{{attendance.name}}</td>
+                  <td>{{attendance.numberOfAccompanied}}</td>
+                  <td>{{attendance.reamrk}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+  </div>
+  

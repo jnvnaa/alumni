@@ -32,6 +32,7 @@ import { ItComponent } from 'src/app/content/sjc/pages/it/it/it.component';
 import { CoreComponent } from 'src/app/content/sjc/pages/core/core/core.component';
 import { MediaPublicityComponent } from 'src/app/content/sjc/pages/media-publicity/media-publicity/media-publicity.component';
 import { LegalComponent } from 'src/app/content/sjc/pages/legal/legal/legal.component';
+import { AttendanceComponent } from 'src/app/content/attendance/attendance.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,7 @@ const routes: Routes = [
       {path:"core",component:CoreComponent, canActivate:[nonameGuard]},       
       {path:"gallery",component:GalleryComponent, canActivate:[nonameGuard]},
       {path: 'identification', component:IdentificationComponent},
+      {path: 'attendance', component:AttendanceComponent},
     ],
   },
 ];

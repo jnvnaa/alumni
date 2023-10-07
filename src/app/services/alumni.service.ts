@@ -57,6 +57,16 @@ export class AlumniService {
 
   }
 
+  getAttendance() : Observable<any>
+  {
+      return this._http.get("https://test.ngmhospital.in/api/Register/attendance/get");
+  }
+
+  getEventNames() : Observable<any>
+  {
+      return this._http.get("https://test.ngmhospital.in/api/Register/attendance/event");
+  }
+
   updateAlumniInfo(obj:any) : Observable<any>
   {
     var formData = new FormData();
