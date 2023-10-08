@@ -94,6 +94,13 @@ export class StatsComponent implements OnInit  {
  
     }
 
+    reset()
+    {
+      this.alumniService.doClear().subscribe(res => {
+        console.log("Reset Done");
+      });
+    }
+
 
    disable(alumni:any)
    {

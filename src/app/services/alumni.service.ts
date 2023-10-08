@@ -119,6 +119,11 @@ export class AlumniService {
       return this._http.get(this.baseUrl + "api/alumni/" + id);
   }
 
+  doClear() : Observable<any>
+  {
+      return this._http.get(this.baseUrl + "api/alumni/clear");
+  }
+
   updatePassword(obj:any) : Observable<any>
   {
       return this._http.post(this.baseUrl + "api/auth/change-password",obj,this.httpOptions);
