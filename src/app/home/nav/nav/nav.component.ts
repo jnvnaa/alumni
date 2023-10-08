@@ -16,7 +16,7 @@ export class NavComponent {
 
   constructor(private auth:AuthService)
   {
-    this.isAdmin = auth.isAdmin();
+    this.isAdmin = auth.isSubAdmin();
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
