@@ -177,4 +177,7 @@ export const teachers = [{"id":1, "name":"A G Sharma", "subject":"Biology", "pho
 {"id":178, "name":"Tapan K Medhi", "subject":"LEB. ATTD", "phone": "7002182397","location":"","service_year":"Current" ,"invitation_sent":false},
 {"id":179, "name":"Vivek Kumar", "subject":"TGT- S.SC", "phone": "6900594841","location":"","service_year":"Current" ,"invitation_sent":false},
 {"id":180, "name":"Yash Paul", "subject":"PGT- Geo", "phone": "8114489197","location":"","service_year":"Current" ,"invitation_sent":false},
+{"id":181, "name":"Sabya Lahkar", "subject":"PET", "phone": "7086834210","location":"","service_year":"" ,"invitation_sent":false},
+{"id":182, "name":"Sanjay Deka", "subject":"UDC", "phone": "8638118503","location":"","service_year":"" ,"invitation_sent":false},
+{"id":183, "name":"Ratan Sir", "subject":"Physics", "phone": "9954682671","location":"","service_year":"" ,"invitation_sent":false},
 ]
